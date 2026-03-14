@@ -7,12 +7,12 @@ import CopyBlock from '../ui/CopyBlock'
 
 function ToolCard({ tool, isCli }) {
   return (
-    <div className="bg-surface rounded-lg p-5">
-      <p className="text-foreground text-lg font-semibold">{tool.name}</p>
+    <div className="bg-surface border-accent/20 rounded-lg border-t-2 p-5">
+      <p className="text-accent text-lg font-semibold">{tool.name}</p>
       <p className="text-muted mt-2 text-sm">{tool.plans}</p>
       <div className="mt-3">
         {isCli ? (
-          <code className="bg-foreground/5 text-foreground block overflow-x-auto rounded px-3 py-2 font-mono text-sm">
+          <code className="bg-accent/10 text-foreground block overflow-x-auto rounded px-3 py-2 font-mono text-sm">
             {tool.install}
           </code>
         ) : (
@@ -38,7 +38,7 @@ export default function ToolsSection() {
 
         <div className="mt-10 space-y-10">
           <div>
-            <h3 className="text-foreground mb-4 text-lg font-semibold">IDE</h3>
+            <h3 className="text-accent mb-4 text-lg font-semibold">IDE</h3>
             <div className="gap-content grid md:grid-cols-2">
               {t.tools.ide.map((tool) => (
                 <ToolCard key={tool.name} tool={tool} isCli={false} />
@@ -47,7 +47,7 @@ export default function ToolsSection() {
           </div>
 
           <div>
-            <h3 className="text-foreground mb-4 text-lg font-semibold">CLI</h3>
+            <h3 className="text-accent mb-4 text-lg font-semibold">CLI</h3>
             <div className="gap-content grid md:grid-cols-2 lg:grid-cols-3">
               {t.tools.cli.map((tool) => (
                 <ToolCard key={tool.name} tool={tool} isCli={true} />

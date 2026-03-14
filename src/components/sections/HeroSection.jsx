@@ -14,7 +14,7 @@ export default function HeroSection() {
       className="relative flex min-h-screen flex-col items-center justify-center px-6 text-center"
     >
       <div ref={revealRef} className="mx-auto max-w-3xl">
-        <h1 className="text-foreground text-4xl font-bold tracking-tight md:text-6xl">
+        <h1 className="text-accent text-4xl font-bold tracking-tight md:text-6xl">
           {t.hero.title}
         </h1>
         <p className="text-muted mt-4 text-xl md:text-2xl">{t.hero.subtitle}</p>
@@ -34,7 +34,7 @@ export default function HeroSection() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-muted"
+          className="text-accent/60"
         >
           <path d="M12 5v14" />
           <path d="m19 12-7 7-7-7" />

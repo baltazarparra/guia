@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 
-const COVER_COLOR = '#2a2a2a'
-const PAGE_COLOR = '#f5f5f0'
+const COVER_COLOR = '#1c1916'
+const PAGE_COLOR = '#3a3225'
 
 /**
  * Procedural low-poly notebook built from Three.js primitives.

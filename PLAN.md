@@ -54,10 +54,9 @@ No analytics, email capture, or formal KPI tracking are required in V1.
 
 ### Desired tone
 
-- minimal
-- premium
-- calm
-- editorial
+- informal
+- conversational
+- direct
 - modern
 - practical
 - clear
@@ -631,14 +630,13 @@ Potential directions:
 
 ### Color system
 
-Hybrid appearance.
-Likely:
+Dark mode with golden accents:
 
-- light neutral base sections
-- darker accent moments or overlays
-- restrained contrast
-- soft grays, off-whites, muted blacks
-- one minimal accent color only if necessary
+- deep charcoal background (`#0c0c0e`)
+- warm off-white text (`#f0ece2`)
+- warm gray secondary text (`#8a8578`)
+- antique gold accent for headings, interactive elements, and highlights (`#c9a84c`)
+- dark surface for cards and panels (`#1a1a1e`)
 
 ### Spacing
 
@@ -655,20 +653,22 @@ No loud gradients.
 
 Copy should be:
 
-- concise
-- calm
-- intelligent
-- practical
+- informal and conversational
+- direct, second-person address ("you", "voce")
+- concise, short sentences
+- practical and clear
 - non-hyped
 
 Avoid:
 
+- em dashes
 - excessive AI buzzwords
 - aggressive marketing tone
 - vague futurism
 - inflated claims
+- overly formal or impersonal phrasing
 
-The writing should feel like a clear creative system being explained by someone who has already filtered noise out.
+The writing should feel like a knowledgeable friend explaining a workflow, not a corporate whitepaper. Contractions are encouraged ("pra", "pro", "ta" in PT-BR; "you'll", "isn't", "it's" in EN).
 
 ## 20. Accessibility and Usability Baseline
 

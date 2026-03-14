@@ -76,6 +76,26 @@ The `<Canvas>` element is positioned `fixed` at `z-index: 0`, behind all DOM con
 
 The 3D notebook is an enhancement, not a dependency. The page must be fully functional (all content readable, all CTAs clickable) without WebGL. The `<Canvas>` is wrapped in both `<Suspense>` and `<WebGLErrorBoundary>`.
 
+## Visual identity
+
+Dark mode with golden accents. The palette is warm and restrained:
+
+| Token        | Value     | Role                                                                 |
+| ------------ | --------- | -------------------------------------------------------------------- |
+| `background` | `#0c0c0e` | Deep charcoal page background                                        |
+| `foreground` | `#f0ece2` | Warm off-white body text                                             |
+| `muted`      | `#8a8578` | Warm gray secondary text                                             |
+| `accent`     | `#c9a84c` | Antique gold (headings, step numbers, card borders, buttons, toggle) |
+| `surface`    | `#1a1a1e` | Dark card/panel background                                           |
+
+Gold accent appears on: all headings (h1, h2, h3), step number markers, card top borders, tool/template names, language toggle active state, primary button background, secondary button border, code block tint, and hero bounce arrow.
+
+3D notebook uses `#1c1916` (cover) and `#3a3225` (pages) to blend with the dark theme.
+
+## Copy tone
+
+Informal, conversational, direct. Uses contractions ("pra", "pro", "tá" in PT-BR; "you'll", "isn't", "it's" in EN). No em dashes. Short sentences, second-person address.
+
 ## Code style
 
 - JavaScript (not TypeScript). Use JSDoc annotations on key component props

@@ -21,11 +21,14 @@ export default function AgentsSection() {
         <div className="gap-content mt-10 grid md:grid-cols-2">
           {t.agents.categories.map((category) => (
             <div key={category.name}>
-              <h3 className="text-foreground mb-3 text-lg font-semibold">{category.name}</h3>
+              <h3 className="text-accent mb-3 text-lg font-semibold">{category.name}</h3>
               <p className="text-muted mb-6 text-sm leading-relaxed">{category.description}</p>
               <div className="space-y-4">
                 {category.tools.map((tool) => (
-                  <div key={tool.name} className="bg-surface rounded-lg p-5">
+                  <div
+                    key={tool.name}
+                    className="bg-surface border-accent/20 rounded-lg border-t-2 p-5"
+                  >
                     <p className="text-foreground font-semibold">{tool.name}</p>
                     <p className="text-muted mt-1 text-sm">{tool.description}</p>
                   </div>

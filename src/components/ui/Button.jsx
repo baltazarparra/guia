@@ -12,8 +12,8 @@ export default function Button({ href, variant = 'primary', children, className 
     'inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent/50'
 
   const variants = {
-    primary: 'bg-accent text-white hover:bg-accent/90',
-    secondary: 'bg-surface text-foreground hover:bg-surface/80',
+    primary: 'bg-accent text-background hover:bg-accent/90',
+    secondary: 'bg-surface text-foreground border border-accent/20 hover:bg-surface/80',
   }
 
   const classes = `${base} ${variants[variant] || variants.primary} ${className}`
