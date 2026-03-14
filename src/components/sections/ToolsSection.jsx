@@ -36,10 +36,10 @@ export default function ToolsSection() {
           <p>{t.tools.body}</p>
         </CopyBlock>
 
-        <div className="mt-12 space-y-10">
+        <div className="mt-10 space-y-10">
           <div>
             <h3 className="text-foreground mb-4 text-lg font-semibold">IDE</h3>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="gap-content grid md:grid-cols-2">
               {t.tools.ide.map((tool) => (
                 <ToolCard key={tool.name} tool={tool} isCli={false} />
               ))}
@@ -48,7 +48,7 @@ export default function ToolsSection() {
 
           <div>
             <h3 className="text-foreground mb-4 text-lg font-semibold">CLI</h3>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="gap-content grid md:grid-cols-2 lg:grid-cols-3">
               {t.tools.cli.map((tool) => (
                 <ToolCard key={tool.name} tool={tool} isCli={true} />
               ))}

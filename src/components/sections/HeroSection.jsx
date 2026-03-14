@@ -23,7 +23,7 @@ export default function HeroSection() {
         </CopyBlock>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 motion-safe:animate-bounce">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
