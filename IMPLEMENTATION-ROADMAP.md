@@ -12,38 +12,44 @@ These must be resolved before Phase 1 begins. No code should be written until al
 
 > PLAN.md reference: section 26 (Pre-requisites), section 18 (Visual System), section 14 (3D Strategy)
 
-- [ ] **P.1**: Write draft copy for all 8 sections in PT-BR
+- [x] **P.1**: Write draft copy for all 8 sections in PT-BR
   - Must be real content, not lorem ipsum
   - Does not need to be final — draft quality is acceptable
   - Structure: one heading + one subheading + body paragraphs per section
   - Output: raw text or markdown, ready to be placed into `content/pt.js`
   - Done: copy exists for Hero, Why, Stack, Plan, PRD, Execution, Templates, Closing
+  - **Result:** Draft copy written in `docs/COPY-OUTLINE.md` (PT-BR section)
 
-- [ ] **P.2**: Translate draft copy to EN
+- [x] **P.2**: Translate draft copy to EN
   - Translate the PT-BR draft from P.1 into English
   - Maintain the same structure and tone
   - Done: EN copy exists for all 8 sections, matching PT-BR structure
+  - **Result:** EN translation written in `docs/COPY-OUTLINE.md` (EN section)
 
-- [ ] **P.3**: Choose typography
+- [x] **P.3**: Choose typography
   - Pick one from: Inter, Geist, General Sans
   - Confirm availability via Google Fonts or local hosting
   - Done: one font family selected, loading method decided (Google Fonts CDN or local files)
+  - **Result:** Inter, via Google Fonts CDN
 
-- [ ] **P.4**: Define color tokens
+- [x] **P.4**: Define color tokens
   - Define at minimum: `background`, `foreground` (text), `muted`, `accent`, `surface`
   - Decide light/dark base direction
   - Done: hex/HSL values documented for all tokens
+  - **Result:** Hybrid off-white/off-black — background: `#FAFAF9`, foreground: `#1A1A1A`, muted: `#6B7280`, accent: `#2563EB`, surface: `#F0F0EE`
 
-- [ ] **P.5**: Decide notebook model source
+- [x] **P.5**: Decide notebook model source
   - Search [Sketchfab](https://sketchfab.com), [Poly Pizza](https://poly.pizza), or [Quaternius](https://quaternius.com) for a free/CC-licensed low-poly notebook in `.glb` format
   - Check if the model has open/closed states or can be easily modified
   - If no suitable model found: decide to use procedural geometry (box + planes)
   - Done: model file downloaded and license verified, OR decision to use procedural geometry documented
+  - **Result:** Procedural geometry (box + planes). Rationale: full control over open/closed states, zero network weight, no licensing dependency, aligns with low-poly minimal aesthetic
 
-- [ ] **P.6**: Confirm PLAN.md as execution reference
+- [x] **P.6**: Confirm PLAN.md as execution reference
   - Review final PLAN.md
   - Confirm all sections align with expectations
   - Done: explicit confirmation that PLAN.md is the source of truth
+  - **Result:** Confirmed
 
 ---
 
@@ -165,7 +171,8 @@ Before moving to Phase 2, verify:
 - [ ] **2.1**: Create copy data files
   - Create `src/content/pt.js` exporting a structured object with all 8 sections' copy in PT-BR
   - Create `src/content/en.js` exporting the same structure in EN
-  - Structure: `{ hero: { title, subtitle, body }, why: { title, body, points }, ... }`
+  - Structure: `{ hero: { title, subtitle, body }, agents: { title, body, categories }, tools: { title, body, lastUpdated, ide, cli, note }, plan: { title, body, steps }, roadmap: { title, body, steps }, execution: { title, body, steps }, templates: { title, body, items }, closing: { title, body, cta } }`
+  - Source copy: `docs/COPY-OUTLINE.md`
   - Files created: `src/content/pt.js`, `src/content/en.js`
   - Done: both files export valid JS objects with identical keys
 
@@ -202,29 +209,34 @@ Before moving to Phase 2, verify:
   - File created: `src/components/sections/HeroSection.jsx`
   - Done: hero fills the viewport, copy is bilingual, scroll cue is visible
 
-- [ ] **2.6**: Build `WhySection`
-  - Explains why jumping into prompting without structure is risky
-  - Key points rendered as a list or structured blocks
-  - File created: `src/components/sections/WhySection.jsx`
-  - Done: section renders with real copy, readable on mobile and desktop
+- [ ] **2.6**: Build `AgentsSection`
+  - Explains IDE agents (Cursor, Trae) vs CLI agents (Claude Code, Codex, OpenCode)
+  - Two categories rendered as structured blocks with tool descriptions
+  - File created: `src/components/sections/AgentsSection.jsx`
+  - Done: section renders with real copy, both categories visible, readable on mobile and desktop
 
-- [ ] **2.7**: Build `StackSection`
-  - Explains the importance of choosing a stack before implementation
-  - File created: `src/components/sections/StackSection.jsx`
-  - Done: section renders with real copy, responsive
+- [ ] **2.7**: Build `ToolsSection`
+  - Displays current pricing tiers and installation instructions for each tool
+  - Includes "last updated" disclaimer
+  - Renders IDE and CLI tools as comparison tables or cards
+  - File created: `src/components/sections/ToolsSection.jsx`
+  - Done: section renders with pricing data, install commands, and disclaimer, responsive
 
 - [ ] **2.8**: Build `PlanSection`
-  - Explains why planning comes before code
+  - Explains how to create the initial PLAN.md using any LLM
+  - Steps rendered as an ordered list or structured blocks
   - File created: `src/components/sections/PlanSection.jsx`
   - Done: section renders with real copy, responsive
 
-- [ ] **2.9**: Build `PRDSection`
-  - Explains the role of a PRD in agentic development
-  - File created: `src/components/sections/PRDSection.jsx`
+- [ ] **2.9**: Build `RoadmapSection`
+  - Explains how to have the code agent review the plan and create an IMPLEMENTATION-ROADMAP.md
+  - Steps rendered as an ordered list or structured blocks
+  - File created: `src/components/sections/RoadmapSection.jsx`
   - Done: section renders with real copy, responsive
 
 - [ ] **2.10**: Build `ExecutionSection`
-  - Explains the execution model through pre-implementation plans
+  - Explains the per-phase execution cycle (plan → PRD → implement → update → report → validate)
+  - Steps rendered as an ordered list or structured blocks
   - File created: `src/components/sections/ExecutionSection.jsx`
   - Done: section renders with real copy, responsive
 
@@ -392,7 +404,7 @@ Before moving to Phase 4, verify:
 ### Tasks
 
 - [ ] **4.1**: Expand Zustand store with per-section progress
-  - Replace single `scrollProgress` with per-section values: `{ hero: 0, why: 0, stack: 0, plan: 0, prd: 0, execution: 0, templates: 0, closing: 0 }`
+  - Replace single `scrollProgress` with per-section values: `{ hero: 0, agents: 0, tools: 0, plan: 0, roadmap: 0, execution: 0, templates: 0, closing: 0 }`
   - Add `activeSection` field (string ID of the most visible section)
   - File modified: `src/hooks/useScrollStore.js`
   - Done: store holds progress values for all 8 sections
@@ -409,7 +421,7 @@ Before moving to Phase 4, verify:
   - Create a declarative configuration object mapping each section ID to a notebook pose
   - Pose properties: `position: [x, y, z]`, `rotation: [x, y, z]`, `openAmount: 0–1`
   - Example: `hero: { position: [0, 0, 0], rotation: [0, 0, 0], openAmount: 0 }` (closed, centered)
-  - Example: `why: { position: [0.5, 0, 0], rotation: [0, 0.3, 0], openAmount: 0.3 }` (slightly open, shifted right)
+  - Example: `agents: { position: [0.5, 0, 0], rotation: [0, 0.3, 0], openAmount: 0.3 }` (slightly open, shifted right)
   - File created: `src/content/notebookStates.js`
   - Done: config object exists with entries for all 8 sections
 

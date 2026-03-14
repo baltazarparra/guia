@@ -32,8 +32,8 @@ npm run preview    # preview production build locally
 src/
   components/
     layout/       # PageShell, SectionContainer, LanguageToggle, BackgroundLayer
-    sections/     # HeroSection, WhySection, StackSection, PlanSection, PRDSection,
-                  # ExecutionSection, TemplatesSection, ClosingSection
+    sections/     # HeroSection, AgentsSection, ToolsSection, PlanSection,
+                  # RoadmapSection, ExecutionSection, TemplatesSection, ClosingSection
     ui/           # Button, Pill, SectionHeading, CopyBlock
     three/        # NotebookScene, NotebookModel, SceneLights, SceneController,
                   # WebGLErrorBoundary, MobileSceneVariant
@@ -45,7 +45,7 @@ src/
   App.jsx
   main.jsx
 public/
-  models/         # notebook.glb (3D model)
+  models/         # (reserved — using procedural geometry for notebook)
   textures/       # texture assets if any
 .github/
   workflows/      # deploy.yml (GitHub Pages deployment)
@@ -88,11 +88,11 @@ Copy is hardcoded in `src/content/pt.js` and `src/content/en.js`. Both files exp
 ```js
 export default {
   hero: { title, subtitle, body },
-  why: { title, body, points: [] },
-  stack: { title, body, points: [] },
-  plan: { title, body },
-  prd: { title, body },
-  execution: { title, body },
+  agents: { title, body, categories: [] },
+  tools: { title, body, lastUpdated, ide: [], cli: [], note },
+  plan: { title, body, steps: [] },
+  roadmap: { title, body, steps: [] },
+  execution: { title, body, steps: [] },
   templates: { title, body, items: [] },
   closing: { title, body, cta }
 }

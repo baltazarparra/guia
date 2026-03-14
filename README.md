@@ -56,8 +56,8 @@ npm run preview
 src/
   components/
     layout/       PageShell, SectionContainer, LanguageToggle
-    sections/     HeroSection, WhySection, StackSection, PlanSection,
-                  PRDSection, ExecutionSection, TemplatesSection, ClosingSection
+    sections/     HeroSection, AgentsSection, ToolsSection, PlanSection,
+                  RoadmapSection, ExecutionSection, TemplatesSection, ClosingSection
     ui/           Button, SectionHeading, CopyBlock
     three/        NotebookScene, NotebookModel, SceneController, SceneLights
   content/        Bilingual copy (pt.js, en.js)

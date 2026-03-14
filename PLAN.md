@@ -243,8 +243,8 @@ Goal: establish concept and visual identity.
 
 Content direction:
 - name: Proxy
-- one-line framing for agentic development
-- short supporting statement
+- subtitle: a practical guide to agentic development
+- short body: code agents are changing software, but speed without structure is chaos
 - visual entry of the 3D notebook
 - subtle cue to scroll
 
@@ -253,84 +253,83 @@ Content direction:
 - camera settles softly
 - slight hover/parallax feel only if performance allows
 
-### Section 2 — Why Start This Way
-Goal: explain the problem with jumping straight into prompting code.
+### Section 2 — Code Agents: IDE vs CLI
+Goal: explain the two modes of using code agents so the visitor understands the landscape.
 
 Key ideas:
-- agents can accelerate chaos too
-- quality needs structure
-- rules and skills reduce bad outcomes
-- beginners need a safe default flow
+- IDE agents (Cursor, Trae): visual interface, embedded in editor, more accessible for beginners
+- CLI agents (Claude Code, Codex, OpenCode): terminal-native, text-driven, more control
+- explain when to use each and key differences
 
 3D behavior:
 - notebook begins opening
-- first annotation layers appear
+- suggests two pathways or modes
 - subtle highlight marks suggest system thinking
 
-### Section 3 — Define the Stack First
-Goal: explain that the stack should be chosen before implementation.
+### Section 3 — Tools and Pricing
+Goal: give practical information so the visitor can pick a tool and get started.
 
 Key ideas:
-- choose tools that fit the product and deployment reality
-- avoid overengineering
-- use a stack that matches the delivery model
-- static site decisions matter
+- current pricing tiers for each tool (Cursor, Trae, Claude Code, Codex, OpenCode)
+- how to install/download each one
+- "last updated" disclaimer since prices change
 
 3D behavior:
-- page flips to a "stack" spread
-- specific keywords or labels appear on pages
+- notebook opens to a spread showing tool cards or comparison
 - controlled layer reveal
+- clean, informational feel
 
-### Section 4 — Create the Plan Before the Code
-Goal: explain why planning comes before implementation.
+### Section 4 — The Initial Plan
+Goal: teach the visitor to create a PLAN.md before using the code agent.
 
 Key ideas:
-- define the flow first
-- align on product intent
-- reduce ambiguity
-- planning is leverage
+- use any LLM (ChatGPT, Claude, Gemini) to draft the initial plan
+- explain the idea clearly: what, for whom, constraints
+- ask for a stack suggestion
+- output: a robust PLAN.md as source of truth
 
 3D behavior:
 - notebook reveals structured pages
 - plan-like layout appears
 - light annotation marks emerge
 
-### Section 5 — Write a PRD
-Goal: explain the role of a PRD in agentic development.
+### Section 5 — Agent Review and Roadmap
+Goal: teach the visitor to have the code agent review the plan and create a roadmap.
 
 Key ideas:
-- PRD clarifies scope
-- PRD improves prompt quality
-- PRD reduces back-and-forth
-- PRD helps break work into stable units
+- open PLAN.md in the code agent
+- agent reviews knowing it will execute
+- agent separates work into development phases
+- agent creates IMPLEMENTATION-ROADMAP.md with atomic tasks
 
 3D behavior:
 - notebook pages show denser structure
-- a few lines or content blocks animate in
+- phase markers or section dividers animate in
 - emphasis remains subtle
 
-### Section 6 — Execute Through Pre-Implementation Plans
-Goal: explain the execution model.
+### Section 6 — Phase Execution
+Goal: teach the per-phase execution cycle.
 
 Key ideas:
-- do not jump from idea straight to full implementation
-- create a short execution plan before writing code
-- validate dependencies, risks, constraints
-- then implement with clarity
+- for each phase: create execution plan → PRD → implement → update roadmap → report
+- validate before advancing to next phase
+- prevents technical debt accumulation
+- keeps the project predictable
 
 3D behavior:
-- notebook reveals checklists or plan fragments
-- page edges, highlights, or progress marks animate
+- notebook reveals checklists or progress marks
+- page edges and highlights animate
+- cyclic or iterative visual cue
 
 ### Section 7 — Templates
-Goal: provide useful reusable starter assets.
+Goal: provide reusable starter assets for each step of the workflow.
 
-Possible templates:
-- simple stack decision template
+Templates:
 - PLAN template
+- ROADMAP template
 - PRD template
-- rules template
-- skills template
+- Rules template
+- Skills template
 
 CTA:
 - "Get templates"
@@ -340,13 +339,13 @@ CTA:
 - notebook settles on a clean open state
 - page contents become most readable here
 
-### Section 8 — Closing Statement
+### Section 8 — Closing
 Goal: close the narrative with clarity.
 
 Message:
-- good agentic development starts with structure
+- good agentic development starts with a plan, not a prompt
+- structure is speed
 - simple flows beat chaotic prompting
-- clarity compounds
 
 CTA:
 - link to GitHub repository
@@ -525,17 +524,17 @@ Suggested component groups:
 
 ### Content sections
 - `HeroSection`
-- `WhySection`
-- `StackSection`
-- `PlanSection`
-- `PRDSection`
-- `ExecutionSection`
+- `AgentsSection` — IDE vs CLI code agents (Cursor, Trae, Claude Code, Codex, OpenCode)
+- `ToolsSection` — pricing, plans, and installation instructions
+- `PlanSection` — creating the initial PLAN.md
+- `RoadmapSection` — agent review and IMPLEMENTATION-ROADMAP.md creation
+- `ExecutionSection` — phase-by-phase execution cycle
 - `TemplatesSection`
 - `ClosingSection`
 
 ### 3D system
 - `NotebookScene` — R3F Canvas wrapper with Suspense and error boundary
-- `NotebookModel` — loads and renders the `.glb` model
+- `NotebookModel` — renders the notebook using procedural geometry (box + planes)
 - `SceneLights` — lighting setup
 - `SceneController` — reads scroll state store, interpolates notebook transforms
 - `MobileSceneVariant` — simplified scene or 2.5D fallback for mobile
