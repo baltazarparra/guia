@@ -24,7 +24,7 @@ export default function HeroSection() {
         <h1 className="text-accent text-4xl font-bold tracking-tight md:text-6xl">
           {t.hero.title}
         </h1>
-        <p className="text-muted mt-4 text-xl md:text-2xl">{t.hero.subtitle}</p>
+        <p className="text-foreground/70 mt-4 text-xl md:text-2xl">{t.hero.subtitle}</p>
 
         <div className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-lg border border-white/10 bg-black/40 backdrop-blur-md">
           <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">

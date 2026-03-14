@@ -3,7 +3,9 @@
  */
 export default function CopyBlock({ children, className = '' }) {
   return (
-    <div className={`text-muted space-y-4 text-base leading-relaxed md:text-lg ${className}`}>
+    <div
+      className={`text-foreground/80 space-y-4 text-base leading-relaxed md:text-lg ${className}`}
+    >
       {children}
     </div>
   )
