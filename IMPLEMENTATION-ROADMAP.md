@@ -63,13 +63,13 @@ These must be resolved before Phase 1 begins. No code should be written until al
 
 ### Tasks
 
-- [ ] **1.1**: Create Vite + React project
+- [x] **1.1**: Create Vite + React project
   - Initialize Vite with the React template in the current repo root
   - Preserve existing files (`PLAN.md`, `README.md`, `LICENSE`, `.gitignore`)
   - Files created: `package.json`, `vite.config.js`, `src/main.jsx`, `src/App.jsx`, `index.html`
   - Done: `npm run dev` starts and shows the default Vite React page in the browser
 
-- [ ] **1.2**: Install and configure Tailwind CSS v4
+- [x] **1.2**: Install and configure Tailwind CSS v4
   - Install `tailwindcss` and `@tailwindcss/vite`
   - Add `tailwindcss()` plugin to `vite.config.js`
   - Create `src/styles/globals.css` with `@import 'tailwindcss'`
@@ -77,13 +77,13 @@ These must be resolved before Phase 1 begins. No code should be written until al
   - Files created: `src/styles/globals.css`. Files modified: `vite.config.js`
   - Done: a Tailwind utility class (e.g. `text-red-500`) renders correctly in the browser
 
-- [ ] **1.3**: Configure Vite for GitHub Pages
+- [x] **1.3**: Configure Vite for GitHub Pages
   - Set `base` in `vite.config.js` to handle the repo-based path (e.g. `/proxy/`)
   - Verify static asset paths resolve correctly after build
   - Files modified: `vite.config.js`
   - Done: `npm run build` produces a `dist/` folder with correct asset paths
 
-- [ ] **1.4**: Create GitHub Actions deployment workflow
+- [x] **1.4**: Create GitHub Actions deployment workflow
   - Create `.github/workflows/deploy.yml`
   - Workflow triggers on push to `main`
   - Steps: checkout, install, build, deploy to GitHub Pages
@@ -91,38 +91,38 @@ These must be resolved before Phase 1 begins. No code should be written until al
   - Files created: `.github/workflows/deploy.yml`
   - Done: workflow file exists and is syntactically valid (manual verification or dry-run)
 
-- [ ] **1.5**: Load typography
+- [x] **1.5**: Load typography
   - Add the chosen font (from P.3) via Google Fonts link in `index.html`
   - Register font in `@theme` directive in `globals.css` (`--font-sans`)
   - Files modified: `index.html`, `src/styles/globals.css`
   - Done: body text renders in the chosen font in the browser
 
-- [ ] **1.6**: Define color tokens in Tailwind
+- [x] **1.6**: Define color tokens in Tailwind
   - Define color tokens via `@theme` directive in `globals.css` (`--color-background`, `--color-foreground`, `--color-muted`, `--color-accent`, `--color-surface`)
   - Tailwind v4 `@theme` variables automatically generate utility classes
   - Files modified: `src/styles/globals.css`
   - Done: `bg-background`, `text-foreground`, `text-accent` etc. work in JSX
 
-- [ ] **1.7**: Establish spacing rhythm
+- [x] **1.7**: Establish spacing rhythm
   - Define spacing tokens via `@theme` in `globals.css` (`--spacing-section`, `--spacing-section-lg`, `--spacing-content`)
   - Document vertical rhythm: section padding, heading margins, paragraph spacing
   - Files modified: `src/styles/globals.css`
   - Done: spacing tokens are usable (`py-section`, `py-section-lg`, `gap-content`, etc.)
 
-- [ ] **1.8**: Create directory structure
+- [x] **1.8**: Create directory structure
   - Create all directories defined in PLAN.md section 16
   - Add placeholder `.gitkeep` files where needed
   - Directories: `src/components/layout/`, `src/components/sections/`, `src/components/ui/`, `src/components/three/`, `src/content/`, `src/hooks/`, `src/styles/`, `public/models/`, `public/textures/`
   - Done: `ls -R src/` shows the full directory tree
 
-- [ ] **1.9**: Build `PageShell` component
+- [x] **1.9**: Build `PageShell` component
   - Top-level layout wrapper
   - Sets up the page structure: will later host the fixed Canvas and scrolling DOM content
   - For now: renders children inside a `<main>` with base styling
   - File created: `src/components/layout/PageShell.jsx`
   - Done: `App.jsx` renders `<PageShell>` wrapping a test heading, visible in browser
 
-- [ ] **1.10**: Build `SectionContainer` component
+- [x] **1.10**: Build `SectionContainer` component
   - Reusable wrapper for each content section
   - Accepts `id` prop for scroll targeting
   - Applies consistent vertical padding, max-width, horizontal centering
@@ -130,13 +130,13 @@ These must be resolved before Phase 1 begins. No code should be written until al
   - File created: `src/components/layout/SectionContainer.jsx`
   - Done: two `<SectionContainer>` blocks render with correct spacing in browser
 
-- [ ] **1.11**: Define responsive breakpoints
+- [x] **1.11**: Define responsive breakpoints
   - Confirm Tailwind v4 default breakpoints (`sm: 40rem`, `md: 48rem`, `lg: 64rem`, `xl: 80rem`)
   - Ensure mobile-first approach: base styles target mobile, `md:` and above for tablet/desktop
   - No files modified (using Tailwind v4 defaults)
   - Done: a `hidden md:block` element is hidden on mobile and visible on desktop in browser
 
-- [ ] **1.12**: Configure `index.html` with SEO and OG tags
+- [x] **1.12**: Configure `index.html` with SEO and OG tags
   - Add `<title>`, `<meta name="description">`, `<meta name="viewport">`
   - Add Open Graph tags: `og:title`, `og:description`, `og:image`, `og:type`, `og:url`
   - Add `<html lang="pt-BR">` (default language)
@@ -147,13 +147,13 @@ These must be resolved before Phase 1 begins. No code should be written until al
 ### Phase 1 checkpoint
 
 Before moving to Phase 2, verify:
-- [ ] `npm run dev` works
-- [ ] `npm run build` produces valid output
-- [ ] font renders correctly
-- [ ] color tokens work in Tailwind classes
-- [ ] `PageShell` and `SectionContainer` render correctly
-- [ ] `index.html` has meta tags
-- [ ] directory structure matches PLAN.md section 16
+- [x] `npm run dev` works
+- [x] `npm run build` produces valid output
+- [x] font renders correctly
+- [x] color tokens work in Tailwind classes
+- [x] `PageShell` and `SectionContainer` render correctly
+- [x] `index.html` has meta tags
+- [x] directory structure matches PLAN.md section 16
 
 ---
 

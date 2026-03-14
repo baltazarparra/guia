@@ -49,20 +49,22 @@
 - [x] P.5: Decide notebook model source — procedural geometry (box + planes)
 - [x] P.6: Confirm PLAN.md as execution reference
 
-### Phase 1 — Scaffold and Design System (12 tasks)
+### Phase 1 — Scaffold and Design System (12 tasks) ✓
 
-- [ ] 1.1: Create Vite + React project
-- [ ] 1.2: Install and configure Tailwind CSS
-- [ ] 1.3: Configure Vite for GitHub Pages
-- [ ] 1.4: Create GitHub Actions deployment workflow
-- [ ] 1.5: Load typography
-- [ ] 1.6: Define color tokens in Tailwind
-- [ ] 1.7: Establish spacing rhythm
-- [ ] 1.8: Create directory structure
-- [ ] 1.9: Build `PageShell` component
-- [ ] 1.10: Build `SectionContainer` component
-- [ ] 1.11: Define responsive breakpoints
-- [ ] 1.12: Configure `index.html` with SEO and OG tags
+- [x] 1.1: Create Vite + React project
+- [x] 1.2: Install and configure Tailwind CSS v4
+- [x] 1.3: Configure Vite for GitHub Pages
+- [x] 1.4: Create GitHub Actions deployment workflow
+- [x] 1.5: Load typography (Inter via Google Fonts)
+- [x] 1.6: Define color tokens in Tailwind
+- [x] 1.7: Establish spacing rhythm
+- [x] 1.8: Create directory structure
+- [x] 1.9: Build `PageShell` component
+- [x] 1.10: Build `SectionContainer` component
+- [x] 1.11: Define responsive breakpoints
+- [x] 1.12: Configure `index.html` with SEO and OG tags
+
+> Report: `reports/phase-1-scaffold-and-design-system.md`
 
 ### Phase 2 — Static Landing Structure (15 tasks)
 
@@ -150,6 +152,6 @@
 
 ## Readiness Verdict
 
-**Verdict:** Ready
+**Verdict:** Ready — Phase 1 complete, Phase 2 next
 
-**Justification:** All pre-requisites are resolved: Inter typography selected, color tokens defined, procedural geometry chosen for the notebook, draft copy written in both languages, and PLAN.md confirmed as execution reference. The content has been restructured to teach a concrete agentic development workflow (tools landscape → PLAN → ROADMAP → phase execution), replacing the previous abstract/philosophical framing. All documents (PRD, PLAN.md, AGENTS.md, IMPLEMENTATION-ROADMAP.md) are aligned with the new content direction. Phase 1 can begin immediately.
+**Justification:** All pre-requisites are resolved and Phase 1 (Scaffold and Design System) has been fully implemented. The project foundation is in place: Vite + React, Tailwind v4 with design tokens, GitHub Pages deployment pipeline, layout primitives, and SEO tags. All 12 Phase 1 tasks passed checkpoint verification. Phase 2 (Static Landing Structure) can begin immediately — draft copy exists in both languages (`docs/COPY-OUTLINE.md`), and the design system is ready to support the 8 content sections.
