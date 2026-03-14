@@ -14,7 +14,7 @@ export default function PageShell({ children }) {
       <Suspense fallback={null}>
         <NotebookScene />
       </Suspense>
-      <main className="relative z-10 min-h-screen">{children}</main>
+      <main className="relative z-10 min-h-screen overflow-x-hidden">{children}</main>
     </>
   )
 }
