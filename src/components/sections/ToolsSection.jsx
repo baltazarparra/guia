@@ -6,15 +6,15 @@ import CopyBlock from '../ui/CopyBlock'
 function ToolCard({ tool, isCli }) {
   return (
     <div className="bg-surface rounded-lg p-5">
-      <p className="font-semibold text-foreground text-lg">{tool.name}</p>
-      <p className="text-sm text-muted mt-2">{tool.plans}</p>
+      <p className="text-foreground text-lg font-semibold">{tool.name}</p>
+      <p className="text-muted mt-2 text-sm">{tool.plans}</p>
       <div className="mt-3">
         {isCli ? (
-          <code className="text-sm font-mono bg-foreground/5 text-foreground px-3 py-2 rounded block overflow-x-auto">
+          <code className="bg-foreground/5 text-foreground block overflow-x-auto rounded px-3 py-2 font-mono text-sm">
             {tool.install}
           </code>
         ) : (
-          <p className="text-sm text-muted">{tool.install}</p>
+          <p className="text-muted text-sm">{tool.install}</p>
         )}
       </div>
     </div>
@@ -33,8 +33,8 @@ export default function ToolsSection() {
 
       <div className="mt-12 space-y-10">
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">IDE</h3>
-          <div className="grid md:grid-cols-2 gap-4">
+          <h3 className="text-foreground mb-4 text-lg font-semibold">IDE</h3>
+          <div className="grid gap-4 md:grid-cols-2">
             {t.tools.ide.map((tool) => (
               <ToolCard key={tool.name} tool={tool} isCli={false} />
             ))}
@@ -42,8 +42,8 @@ export default function ToolsSection() {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">CLI</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h3 className="text-foreground mb-4 text-lg font-semibold">CLI</h3>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {t.tools.cli.map((tool) => (
               <ToolCard key={tool.name} tool={tool} isCli={true} />
             ))}
@@ -51,7 +51,7 @@ export default function ToolsSection() {
         </div>
       </div>
 
-      <p className="mt-8 text-sm text-muted">
+      <p className="text-muted mt-8 text-sm">
         {t.tools.lastUpdated} — {t.tools.note}
       </p>
     </SectionContainer>

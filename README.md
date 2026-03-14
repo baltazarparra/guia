@@ -16,23 +16,23 @@ Proxy presents a simple, practical workflow that helps beginners build with more
 
 **Planning phase.** The project has a complete product plan and implementation roadmap. No application code has been written yet.
 
-| Document | Purpose |
-|---|---|
-| [`PLAN.md`](PLAN.md) | Full product spec — vision, stack, architecture, phases, risks, acceptance criteria |
-| [`IMPLEMENTATION-ROADMAP.md`](IMPLEMENTATION-ROADMAP.md) | Task-level execution guide — 57 atomic tasks across 7 phases |
-| [`AGENTS.md`](AGENTS.md) | Instructions for AI coding agents working on this project |
+| Document                                                 | Purpose                                                                             |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [`PLAN.md`](PLAN.md)                                     | Full product spec — vision, stack, architecture, phases, risks, acceptance criteria |
+| [`IMPLEMENTATION-ROADMAP.md`](IMPLEMENTATION-ROADMAP.md) | Task-level execution guide — 57 atomic tasks across 7 phases                        |
+| [`AGENTS.md`](AGENTS.md)                                 | Instructions for AI coding agents working on this project                           |
 
 ## Stack
 
-| Layer | Technology |
-|---|---|
-| Build | Vite |
-| UI | React (JavaScript) |
-| Styling | Tailwind CSS |
-| 3D | React Three Fiber + Drei |
-| Animation | GSAP + ScrollTrigger |
-| State bridge | Zustand |
-| Deployment | GitHub Actions + GitHub Pages |
+| Layer        | Technology                    |
+| ------------ | ----------------------------- |
+| Build        | Vite                          |
+| UI           | React (JavaScript)            |
+| Styling      | Tailwind CSS                  |
+| 3D           | React Three Fiber + Drei      |
+| Animation    | GSAP + ScrollTrigger          |
+| State bridge | Zustand                       |
+| Deployment   | GitHub Actions + GitHub Pages |
 
 ## Local development
 

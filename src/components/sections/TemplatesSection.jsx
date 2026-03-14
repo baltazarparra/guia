@@ -14,11 +14,11 @@ export default function TemplatesSection() {
         <p>{t.templates.body}</p>
       </CopyBlock>
 
-      <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-content">
+      <div className="gap-content mt-10 grid md:grid-cols-2 lg:grid-cols-3">
         {t.templates.items.map((item) => (
-          <div key={item.name} className="bg-surface rounded-lg p-6 flex flex-col">
-            <p className="font-semibold text-foreground text-lg">{item.name}</p>
-            <p className="text-sm text-muted mt-2 flex-1">{item.description}</p>
+          <div key={item.name} className="bg-surface flex flex-col rounded-lg p-6">
+            <p className="text-foreground text-lg font-semibold">{item.name}</p>
+            <p className="text-muted mt-2 flex-1 text-sm">{item.description}</p>
             <div className="mt-4">
               <Button href="#" variant="secondary" className="w-full text-sm">
                 {item.name}

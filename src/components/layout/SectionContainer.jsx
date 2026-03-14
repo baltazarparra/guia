@@ -3,10 +3,7 @@
  */
 export default function SectionContainer({ id, children, className = '' }) {
   return (
-    <section
-      id={id}
-      className={`py-section md:py-section-lg max-w-3xl mx-auto px-6 ${className}`}
-    >
+    <section id={id} className={`py-section md:py-section-lg mx-auto max-w-3xl px-6 ${className}`}>
       {children}
     </section>
   )

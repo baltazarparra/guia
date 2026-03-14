@@ -24,6 +24,10 @@ npm install
 npm run dev        # local dev server
 npm run build      # production build to dist/
 npm run preview    # preview production build locally
+npm run check      # lint + format check + typecheck + testes
+npm run lint:fix   # auto-fix lint issues
+npm run format     # auto-format all files
+npm run test:watch # testes em modo watch
 ```
 
 ## Directory structure
@@ -80,6 +84,7 @@ The 3D notebook is an enhancement, not a dependency. The page must be fully func
 - Use design tokens defined via `@theme` in `src/styles/globals.css` (colors: `background`, `foreground`, `muted`, `accent`, `surface`)
 - Semantic HTML: `<section>`, `<h1>`-`<h3>`, `<p>`, `<button>`, `<a>`
 - Mobile-first: base styles target mobile, `md:` and above for tablet/desktop
+- ESLint 9, Prettier (with Tailwind plugin), and TypeScript checkJs are configured. Run `npm run check` to validate.
 
 ## Content model
 
@@ -94,7 +99,7 @@ export default {
   roadmap: { title, body, steps: [] },
   execution: { title, body, steps: [] },
   templates: { title, body, items: [] },
-  closing: { title, body, cta }
+  closing: { title, body, cta },
 }
 ```
 
@@ -156,9 +161,11 @@ GitHub Pages via GitHub Actions. Workflow at `.github/workflows/deploy.yml`.
 
 After any meaningful change:
 
-1. Run `npm run dev` and verify in browser
-2. Check mobile viewport (375px width)
-3. Verify language toggle still works
-4. If 3D scene was changed: test with `prefers-reduced-motion` enabled
-5. If 3D scene was changed: verify error boundary by temporarily breaking WebGL
-6. Run `npm run build` to confirm no build errors
+1. Run `npm run lint:fix` and `npm run format` to auto-correct issues
+2. Run `npm run check` — must exit 0 (lint, format check, typecheck, tests)
+3. Run `npm run dev` and verify in browser
+4. Check mobile viewport (375px width)
+5. Verify language toggle still works
+6. If 3D scene was changed: test with `prefers-reduced-motion` enabled
+7. If 3D scene was changed: verify error boundary by temporarily breaking WebGL
+8. Run `npm run build` to confirm no build errors

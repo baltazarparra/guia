@@ -4,7 +4,7 @@ export default function LanguageToggle() {
   const { lang, setLang } = useLanguage()
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-1 rounded-lg bg-surface/80 backdrop-blur-sm p-1">
+    <div className="bg-surface/80 fixed top-4 right-4 z-50 flex gap-1 rounded-lg p-1 backdrop-blur-sm">
       <button
         onClick={() => setLang('pt')}
         className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${

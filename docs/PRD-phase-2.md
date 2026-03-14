@@ -2,11 +2,11 @@
 
 ## Metadata
 
-| Field  | Value |
-|--------|-------|
+| Field  | Value      |
+| ------ | ---------- |
 | Date   | 2026-03-14 |
-| Author | baltz |
-| Status | Approved |
+| Author | baltz      |
+| Status | Approved   |
 
 ## Problem Statement
 
@@ -63,6 +63,7 @@ The data shape follows the content model defined in PLAN.md:
 ### 2. Language infrastructure
 
 A React context (`LanguageProvider`) and hook (`useLanguage`) that:
+
 - Provides `{ lang, setLang, t }` where `t` is the current language's copy object
 - Defaults to `pt`
 - Persists the choice in `localStorage`
@@ -82,16 +83,16 @@ Three reusable components that enforce the design system established in Phase 1:
 
 Eight components, each wrapping content in `<SectionContainer>`:
 
-| Component | Content type | Key elements |
-|-----------|-------------|--------------|
-| `HeroSection` | Full-viewport hero | Title, subtitle, body, scroll cue |
-| `AgentsSection` | Two-category comparison | IDE agents (Cursor, Trae) vs CLI agents (Claude Code, Codex, OpenCode) with descriptions |
-| `ToolsSection` | Pricing + installation | Tables/cards for IDE and CLI tools, "last updated" disclaimer |
-| `PlanSection` | Ordered workflow steps | How to create PLAN.md with any LLM |
-| `RoadmapSection` | Ordered workflow steps | How to have the agent create IMPLEMENTATION-ROADMAP.md |
-| `ExecutionSection` | Ordered workflow steps | Per-phase execution cycle |
-| `TemplatesSection` | Template list + CTAs | Template cards with placeholder CTA URLs |
-| `ClosingSection` | Final statement + CTA | Closing narrative + GitHub repo link |
+| Component          | Content type            | Key elements                                                                             |
+| ------------------ | ----------------------- | ---------------------------------------------------------------------------------------- |
+| `HeroSection`      | Full-viewport hero      | Title, subtitle, body, scroll cue                                                        |
+| `AgentsSection`    | Two-category comparison | IDE agents (Cursor, Trae) vs CLI agents (Claude Code, Codex, OpenCode) with descriptions |
+| `ToolsSection`     | Pricing + installation  | Tables/cards for IDE and CLI tools, "last updated" disclaimer                            |
+| `PlanSection`      | Ordered workflow steps  | How to create PLAN.md with any LLM                                                       |
+| `RoadmapSection`   | Ordered workflow steps  | How to have the agent create IMPLEMENTATION-ROADMAP.md                                   |
+| `ExecutionSection` | Ordered workflow steps  | Per-phase execution cycle                                                                |
+| `TemplatesSection` | Template list + CTAs    | Template cards with placeholder CTA URLs                                                 |
+| `ClosingSection`   | Final statement + CTA   | Closing narrative + GitHub repo link                                                     |
 
 ### 5. Page assembly
 
@@ -101,16 +102,16 @@ Eight components, each wrapping content in `<SectionContainer>`:
 
 ### Existing foundation (from Phase 1)
 
-| Asset | Status |
-|-------|--------|
-| Vite + React (v19) | Installed, `npm run dev` works |
-| Tailwind v4 with `@theme` tokens | Configured in `globals.css` |
-| `PageShell` component | Built (`<main className="min-h-screen">`) |
-| `SectionContainer` component | Built (responsive padding, max-width, `<section>`) |
-| GitHub Actions workflow | `.github/workflows/deploy.yml` exists |
-| Design tokens | Colors: background/foreground/muted/accent/surface. Spacing: section/section-lg/content. Font: Inter |
-| Draft copy | `docs/COPY-OUTLINE.md` — complete for all 8 sections in PT-BR and EN |
-| SEO/OG tags | `index.html` configured |
+| Asset                            | Status                                                                                               |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Vite + React (v19)               | Installed, `npm run dev` works                                                                       |
+| Tailwind v4 with `@theme` tokens | Configured in `globals.css`                                                                          |
+| `PageShell` component            | Built (`<main className="min-h-screen">`)                                                            |
+| `SectionContainer` component     | Built (responsive padding, max-width, `<section>`)                                                   |
+| GitHub Actions workflow          | `.github/workflows/deploy.yml` exists                                                                |
+| Design tokens                    | Colors: background/foreground/muted/accent/surface. Spacing: section/section-lg/content. Font: Inter |
+| Draft copy                       | `docs/COPY-OUTLINE.md` — complete for all 8 sections in PT-BR and EN                                 |
+| SEO/OG tags                      | `index.html` configured                                                                              |
 
 ### Architecture constraints
 
@@ -190,13 +191,13 @@ The `agents` section has `categories` — an array of two objects (IDE, CLI), ea
 
 ## Risks and Mitigations
 
-| Risk | Severity | Mitigation |
-|------|----------|------------|
-| Copy structure in `COPY-OUTLINE.md` doesn't map cleanly to the JS data shape | Medium | Define the exact data shape in this PRD (see Proposed Solution). Transform copy during file creation, not at render time |
-| Language toggle causes layout shift when switching between PT-BR and EN (different text lengths) | Medium | Use `min-h-screen` for hero. Allow natural height expansion for other sections. Do not fix section heights |
-| Tools/pricing data is already outdated | Low | Include `lastUpdated` field and disclaimer `note`. Copy was written March 2026 — still current |
-| Section components become too large or inconsistent | Low | Enforce separation: section components compose UI primitives (`SectionHeading`, `CopyBlock`, `Button`). No styling logic inside section components beyond layout |
-| Scroll position resets on language change | Low | Language switching uses React context (re-render, not re-mount). Scroll position is preserved by default |
+| Risk                                                                                             | Severity | Mitigation                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Copy structure in `COPY-OUTLINE.md` doesn't map cleanly to the JS data shape                     | Medium   | Define the exact data shape in this PRD (see Proposed Solution). Transform copy during file creation, not at render time                                         |
+| Language toggle causes layout shift when switching between PT-BR and EN (different text lengths) | Medium   | Use `min-h-screen` for hero. Allow natural height expansion for other sections. Do not fix section heights                                                       |
+| Tools/pricing data is already outdated                                                           | Low      | Include `lastUpdated` field and disclaimer `note`. Copy was written March 2026 — still current                                                                   |
+| Section components become too large or inconsistent                                              | Low      | Enforce separation: section components compose UI primitives (`SectionHeading`, `CopyBlock`, `Button`). No styling logic inside section components beyond layout |
+| Scroll position resets on language change                                                        | Low      | Language switching uses React context (re-render, not re-mount). Scroll position is preserved by default                                                         |
 
 ## Success Criteria
 

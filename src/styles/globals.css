@@ -1,13 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-  --color-background: #FAFAF9;
-  --color-foreground: #1A1A1A;
-  --color-muted: #6B7280;
-  --color-accent: #2563EB;
-  --color-surface: #F0F0EE;
+  --color-background: #fafaf9;
+  --color-foreground: #1a1a1a;
+  --color-muted: #6b7280;
+  --color-accent: #2563eb;
+  --color-surface: #f0f0ee;
 
   --spacing-section: 5rem;
   --spacing-section-lg: 8rem;

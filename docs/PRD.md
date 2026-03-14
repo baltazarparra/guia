@@ -2,11 +2,11 @@
 
 ## Metadata
 
-| Field  | Value |
-|--------|-------|
+| Field  | Value      |
+| ------ | ---------- |
 | Date   | 2026-03-14 |
-| Author | baltz |
-| Status | Approved |
+| Author | baltz      |
+| Status | Approved   |
 
 ## Problem Statement
 
@@ -66,15 +66,15 @@ The page is bilingual (PT-BR / EN) with a toggle that switches all content witho
 
 ### Stack
 
-| Layer | Technology | Rationale |
-|-------|-----------|-----------|
-| Build tool | Vite | Static SPA, no SSR needed. Simpler than Next.js for this use case |
-| UI framework | React (JavaScript) | Component structure for modular sections and R3F integration |
-| Styling | Tailwind CSS | Rapid iteration, controlled spacing, lean for static sites |
-| 3D rendering | React Three Fiber + Drei | React-based 3D orchestration with mobile-aware simplification |
-| Scroll animation | GSAP + ScrollTrigger | Robust scroll-driven DOM animations and section progress tracking |
-| State bridge | Zustand | Bridges GSAP (DOM scroll) and R3F (WebGL render loop) without race conditions |
-| Deployment | GitHub Actions + GitHub Pages | Static hosting, CI/CD on push to main |
+| Layer            | Technology                    | Rationale                                                                     |
+| ---------------- | ----------------------------- | ----------------------------------------------------------------------------- |
+| Build tool       | Vite                          | Static SPA, no SSR needed. Simpler than Next.js for this use case             |
+| UI framework     | React (JavaScript)            | Component structure for modular sections and R3F integration                  |
+| Styling          | Tailwind CSS                  | Rapid iteration, controlled spacing, lean for static sites                    |
+| 3D rendering     | React Three Fiber + Drei      | React-based 3D orchestration with mobile-aware simplification                 |
+| Scroll animation | GSAP + ScrollTrigger          | Robust scroll-driven DOM animations and section progress tracking             |
+| State bridge     | Zustand                       | Bridges GSAP (DOM scroll) and R3F (WebGL render loop) without race conditions |
+| Deployment       | GitHub Actions + GitHub Pages | Static hosting, CI/CD on push to main                                         |
 
 ### Architecture constraints
 
@@ -86,13 +86,13 @@ The page is bilingual (PT-BR / EN) with a toggle that switches all content witho
 
 ### Performance budget
 
-| Metric | Target |
-|--------|--------|
-| LCP | < 2.5s on 4G mobile |
-| JS bundle (excl. 3D model) | < 300KB gzipped |
-| 3D model | < 500KB `.glb` |
-| Scroll frame rate | Stable 30fps+ on iPhone 12 class hardware |
-| Time to interactive | < 4s on 4G |
+| Metric                     | Target                                    |
+| -------------------------- | ----------------------------------------- |
+| LCP                        | < 2.5s on 4G mobile                       |
+| JS bundle (excl. 3D model) | < 300KB gzipped                           |
+| 3D model                   | < 500KB `.glb`                            |
+| Scroll frame rate          | Stable 30fps+ on iPhone 12 class hardware |
+| Time to interactive        | < 4s on 4G                                |
 
 ### Content model
 
@@ -115,11 +115,11 @@ Note: the `tools` section includes pricing data that may become outdated. A `las
 
 ### Notebook 3D tiers
 
-| Tier | Description | V1 Status |
-|------|-------------|-----------|
-| Tier 1 | Static model, rotation/position transitions via scroll, open/closed states | Required |
-| Tier 2 | Page-flip animation, 2-3 spread states, annotation marks | Target if feasible |
-| Tier 3 | Readable content on 3D pages, animated checklists | Deferred |
+| Tier   | Description                                                                | V1 Status          |
+| ------ | -------------------------------------------------------------------------- | ------------------ |
+| Tier 1 | Static model, rotation/position transitions via scroll, open/closed states | Required           |
+| Tier 2 | Page-flip animation, 2-3 spread states, annotation marks                   | Target if feasible |
+| Tier 3 | Readable content on 3D pages, animated checklists                          | Deferred           |
 
 ## Scope
 
@@ -165,16 +165,16 @@ Note: the `tools` section includes pricing data that may become outdated. A `las
 
 ## Risks and Mitigations
 
-| Risk | Severity | Mitigation |
-|------|----------|------------|
-| 3D complexity grows beyond performance budget | High | Use complexity tiers (start Tier 1, advance only if stable). Have 2.5D CSS fallback as escape hatch |
-| R3F + GSAP integration causes jank or race conditions | High | Validate integration pattern in Phase 3 spike before building all sections. Keep GSAP on DOM only, R3F on WebGL only. Zustand as the only bridge |
-| Mobile experience degrades (frame rate, touch scroll) | High | Design mobile behavior from the start. Simplify scene aggressively via `useReducedComplexity`. Test early on iPhone-class viewports |
-| Scroll orchestration becomes fragile | Medium | Centralize motion logic in `SceneController` and `useScrollProgress`. Define section states as a declarative map. Avoid scattered trigger logic |
-| AI-generated code introduces unnecessary complexity | Medium | Enforce small isolated tasks. Validate every major step. Reject speculative abstractions |
-| Copy dependency blocks implementation | Medium | Require draft copy as pre-requisite before Phase 2. Accept draft quality for initial build, refine in Phase 5. Never use lorem ipsum |
-| Visual references become imitation (Linear, Apple, Untold) | Low | Use references for tone and pacing only. Preserve original content structure and notebook metaphor |
-| Pricing data becomes outdated | Low | Include `lastUpdated` field and disclaimer note. Pricing section is easy to update (hardcoded copy files) |
+| Risk                                                       | Severity | Mitigation                                                                                                                                       |
+| ---------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 3D complexity grows beyond performance budget              | High     | Use complexity tiers (start Tier 1, advance only if stable). Have 2.5D CSS fallback as escape hatch                                              |
+| R3F + GSAP integration causes jank or race conditions      | High     | Validate integration pattern in Phase 3 spike before building all sections. Keep GSAP on DOM only, R3F on WebGL only. Zustand as the only bridge |
+| Mobile experience degrades (frame rate, touch scroll)      | High     | Design mobile behavior from the start. Simplify scene aggressively via `useReducedComplexity`. Test early on iPhone-class viewports              |
+| Scroll orchestration becomes fragile                       | Medium   | Centralize motion logic in `SceneController` and `useScrollProgress`. Define section states as a declarative map. Avoid scattered trigger logic  |
+| AI-generated code introduces unnecessary complexity        | Medium   | Enforce small isolated tasks. Validate every major step. Reject speculative abstractions                                                         |
+| Copy dependency blocks implementation                      | Medium   | Require draft copy as pre-requisite before Phase 2. Accept draft quality for initial build, refine in Phase 5. Never use lorem ipsum             |
+| Visual references become imitation (Linear, Apple, Untold) | Low      | Use references for tone and pacing only. Preserve original content structure and notebook metaphor                                               |
+| Pricing data becomes outdated                              | Low      | Include `lastUpdated` field and disclaimer note. Pricing section is easy to update (hardcoded copy files)                                        |
 
 ## Success Criteria
 

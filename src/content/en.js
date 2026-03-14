@@ -89,7 +89,7 @@ export default {
 
   plan: {
     title: 'Start with a plan, not a prompt',
-    body: "Before opening the code agent, create a PLAN.md. This is the document that translates your idea into concrete decisions: what will be built, which stack to use, how it will be deployed, and what stays out of scope.\n\nYou can use any LLM to generate the initial plan — ChatGPT, Claude, Gemini. What matters is explaining your idea clearly: what you want to build, for whom, with what constraints. Ask for a stack suggestion based on the project type and deployment model.\n\nThe result should be a robust markdown file that serves as the source of truth for all development.",
+    body: 'Before opening the code agent, create a PLAN.md. This is the document that translates your idea into concrete decisions: what will be built, which stack to use, how it will be deployed, and what stays out of scope.\n\nYou can use any LLM to generate the initial plan — ChatGPT, Claude, Gemini. What matters is explaining your idea clearly: what you want to build, for whom, with what constraints. Ask for a stack suggestion based on the project type and deployment model.\n\nThe result should be a robust markdown file that serves as the source of truth for all development.',
     steps: [
       'Describe your idea with context: product type, audience, constraints',
       'Ask for a stack suggestion aligned to the project',
@@ -100,7 +100,7 @@ export default {
 
   roadmap: {
     title: 'Let the agent review and organize',
-    body: "With the PLAN.md ready, take it to your code agent — Cursor, Claude Code, or whichever you prefer. Ask the agent to review the plan knowing that it will be the one executing the work.\n\nThe agent analyzes the plan, identifies dependencies, breaks the work into phases, and creates an IMPLEMENTATION-ROADMAP.md — a roadmap with atomic tasks organized by phase, each with clear completion criteria.\n\nThe roadmap becomes the execution backbone. Nothing gets implemented outside of it.",
+    body: 'With the PLAN.md ready, take it to your code agent — Cursor, Claude Code, or whichever you prefer. Ask the agent to review the plan knowing that it will be the one executing the work.\n\nThe agent analyzes the plan, identifies dependencies, breaks the work into phases, and creates an IMPLEMENTATION-ROADMAP.md — a roadmap with atomic tasks organized by phase, each with clear completion criteria.\n\nThe roadmap becomes the execution backbone. Nothing gets implemented outside of it.',
     steps: [
       'Open PLAN.md in your code agent',
       'Ask for a review considering the agent will execute it',

@@ -147,6 +147,7 @@ These must be resolved before Phase 1 begins. No code should be written until al
 ### Phase 1 checkpoint
 
 Before moving to Phase 2, verify:
+
 - [x] `npm run dev` works
 - [x] `npm run build` produces valid output
 - [x] font renders correctly
@@ -274,12 +275,73 @@ Before moving to Phase 2, verify:
 ### Phase 2 checkpoint
 
 Before moving to Phase 3, verify:
+
 - [x] all 8 sections render with real copy
 - [x] language toggle switches all text
 - [x] page is responsive at mobile, tablet, and desktop widths
 - [x] semantic HTML is used (`<section>`, `<h1>`–`<h3>`, `<p>`, `<button>`)
 - [ ] page is deployed and accessible on GitHub Pages
 - [x] no 3D code has been added yet
+
+---
+
+## Quality Gate — Static Analysis, Formatting, Type-checking, Tests
+
+**Objective:** Establish a quality gate that blocks production deploys unless code passes lint, format check, type-check, and tests.
+
+**Dependencies:** Phase 2 tasks 2.1–2.14 complete (code exists to validate).
+
+### Tasks
+
+- [x] **QG.1**: Install quality gate tooling
+  - devDependencies: `eslint` (v9), `@eslint/js`, `globals`, `eslint-plugin-react`, `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh`, `eslint-config-prettier`, `prettier`, `prettier-plugin-tailwindcss`, `typescript`, `@types/react`, `@types/react-dom`, `vitest`, `@testing-library/react`, `@testing-library/jest-dom`, `jsdom`
+  - Done: `npm install` succeeds, `npm run dev` still works
+
+- [x] **QG.2**: Configure ESLint 9 (flat config)
+  - Created `eslint.config.js` with React, hooks, refresh, recommended rules
+  - Disabled `react/prop-types` (JSDoc serves as prop documentation)
+  - Done: `npm run lint` reports zero errors
+
+- [x] **QG.3**: Configure Prettier
+  - Created `.prettierrc` (semi: false, singleQuote: true, Tailwind plugin)
+  - Created `.prettierignore` (dist, node_modules, .cursor)
+  - Done: `npm run format:check` passes on all files
+
+- [x] **QG.4**: Configure type-checking via JSDoc
+  - Created `jsconfig.json` with `checkJs: true`, `jsx: react-jsx`, `strict: false`
+  - Installed `@types/react` and `@types/react-dom` for proper type resolution
+  - Done: `npm run typecheck` passes with zero errors
+
+- [x] **QG.5**: Configure Vitest
+  - Added `test` block to `vite.config.js` (jsdom environment, globals, setup file)
+  - Created `src/test/setup.js` with jest-dom matchers
+  - Done: `npm run test` executes and passes
+
+- [x] **QG.6**: Add quality scripts to package.json
+  - Scripts: `lint`, `lint:fix`, `format`, `format:check`, `typecheck`, `test`, `test:watch`, `check`
+  - `check` runs all gates in sequence: lint → format:check → typecheck → test
+  - Done: `npm run check` runs all gates and exits 0
+
+- [x] **QG.7**: Conform existing code to quality gates
+  - Ran `eslint --fix` and `prettier --write` on all 19 source files
+  - Fixed `useLanguage.jsx`: `useEffect` empty deps → `[lang]`, `setLang` wrapped in `useCallback`, DOM sync consolidated in effect
+  - Done: all existing code passes lint, format check, and typecheck
+
+- [x] **QG.8**: Write initial test suite
+  - `src/content/__tests__/copy-keys.test.js`: validates pt/en key parity, array lengths, no empty strings
+  - `src/components/__tests__/smoke.test.jsx`: App renders, all 8 section IDs present, language toggle buttons exist
+  - Done: 8 tests pass
+
+- [x] **QG.9**: Add quality gate to CI pipeline
+  - Added lint, format:check, typecheck, and test steps to `.github/workflows/deploy.yml` before the build step
+  - Done: deploy is blocked if any quality check fails
+
+### Quality gate checkpoint
+
+- [x] `npm run check` passes (lint, format, typecheck, tests)
+- [x] `npm run build` succeeds
+- [x] CI workflow includes quality gate steps before deploy
+- [x] no new runtime dependencies added (all devDependencies)
 
 ---
 
@@ -382,6 +444,7 @@ Before moving to Phase 3, verify:
 ### Phase 3 checkpoint
 
 Before moving to Phase 4, verify:
+
 - [ ] notebook renders behind DOM content
 - [ ] notebook responds to scroll (basic rotation)
 - [ ] loading state appears while model loads
@@ -466,6 +529,7 @@ Before moving to Phase 4, verify:
 ### Phase 4 checkpoint
 
 Before moving to Phase 5, verify:
+
 - [ ] notebook transitions between 8 distinct poses based on active section
 - [ ] transitions are smooth during scrolling (no jumps or snapping)
 - [ ] DOM text animations fire on section entry
@@ -519,6 +583,7 @@ Before moving to Phase 5, verify:
 ### Phase 5 checkpoint
 
 Before moving to Phase 6, verify:
+
 - [ ] all CTA links work and point to real URLs
 - [ ] copy is final in both languages
 - [ ] no placeholder content remains
@@ -602,6 +667,7 @@ Before moving to Phase 6, verify:
 ### Phase 6 checkpoint
 
 Before moving to Phase 7, verify:
+
 - [ ] mobile experience is smooth and elegant
 - [ ] performance budget thresholds are met (LCP, bundle, frame rate, TTI)
 - [ ] `prefers-reduced-motion` works correctly

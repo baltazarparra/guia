@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useMemo } from 'react'
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react'
 import pt from '../content/pt'
 import en from '../content/en'
 
@@ -19,27 +19,25 @@ function getInitialLang() {
 export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState(getInitialLang)
 
-  const setLang = (newLang) => {
+  const setLang = useCallback((newLang) => {
     setLangState(newLang)
     localStorage.setItem(STORAGE_KEY, newLang)
-    document.documentElement.lang = newLang === 'pt' ? 'pt-BR' : 'en'
-  }
+  }, [])
 
   useEffect(() => {
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en'
-  }, [])
+  }, [lang])
 
-  const value = useMemo(() => ({
-    lang,
-    setLang,
-    t: copies[lang],
-  }), [lang])
-
-  return (
-    <LanguageContext.Provider value={value}>
-      {children}
-    </LanguageContext.Provider>
+  const value = useMemo(
+    () => ({
+      lang,
+      setLang,
+      t: copies[lang],
+    }),
+    [lang, setLang],
   )
+
+  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
 }
 
 /**

@@ -1,0 +1,17 @@
+---
+description: Enforce quality gate checks before declaring work complete
+alwaysApply: true
+---
+
+# Quality gate
+
+After modifying `.js`, `.jsx`, or `.css` files, run:
+
+```
+npm run lint:fix
+npm run format
+```
+
+Before declaring any task complete, run `npm run check` and verify it
+exits with zero errors. Do not claim completeness without showing the
+check output as evidence.

@@ -51,18 +51,18 @@ Cada ferramenta tem seu modelo de preço e forma de instalação. Aqui está o p
 
 **ide:**
 
-| Ferramenta | Planos | Como instalar |
-|------------|--------|---------------|
-| Cursor | Hobby (grátis) · Pro ($20/mês) · Pro+ ($60/mês) · Ultra ($200/mês) | cursor.com — baixe o instalador para seu sistema |
-| Trae | Free (grátis) · Pro ($10/mês ou $7.50/mês anual) | trae.ai — baixe o instalador para seu sistema |
+| Ferramenta | Planos                                                             | Como instalar                                    |
+| ---------- | ------------------------------------------------------------------ | ------------------------------------------------ |
+| Cursor     | Hobby (grátis) · Pro ($20/mês) · Pro+ ($60/mês) · Ultra ($200/mês) | cursor.com — baixe o instalador para seu sistema |
+| Trae       | Free (grátis) · Pro ($10/mês ou $7.50/mês anual)                   | trae.ai — baixe o instalador para seu sistema    |
 
 **cli:**
 
-| Ferramenta | Planos | Como instalar |
-|------------|--------|---------------|
-| Claude Code | Free · Pro ($20/mês) · Max 5x ($100/mês) · Max 20x ($200/mês) · ou via API | `npm install -g @anthropic-ai/claude-code` |
-| Codex | Incluído no ChatGPT Plus ($20/mês) · Pro ($200/mês) · Business ($25/user/mês) | `npm install -g @openai/codex` |
-| OpenCode | Gratuito e open-source (requer chaves de API próprias) | `brew install opencode-ai/tap/opencode` ou `go install github.com/opencode-ai/opencode@latest` |
+| Ferramenta  | Planos                                                                        | Como instalar                                                                                  |
+| ----------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Claude Code | Free · Pro ($20/mês) · Max 5x ($100/mês) · Max 20x ($200/mês) · ou via API    | `npm install -g @anthropic-ai/claude-code`                                                     |
+| Codex       | Incluído no ChatGPT Plus ($20/mês) · Pro ($200/mês) · Business ($25/user/mês) | `npm install -g @openai/codex`                                                                 |
+| OpenCode    | Gratuito e open-source (requer chaves de API próprias)                        | `brew install opencode-ai/tap/opencode` ou `go install github.com/opencode-ai/opencode@latest` |
 
 **note:** Preços podem mudar. Consulte os sites oficiais para valores atualizados.
 
@@ -79,6 +79,7 @@ Você pode usar qualquer LLM para gerar o plano inicial — ChatGPT, Claude, Gem
 O resultado deve ser um arquivo markdown robusto que serve como fonte da verdade para todo o desenvolvimento.
 
 **steps:**
+
 - Descreva sua ideia com contexto: tipo de produto, público, restrições
 - Peça uma sugestão de stack alinhada ao projeto
 - Revise e ajuste o plano até que faça sentido
@@ -97,6 +98,7 @@ O agente analisa o plano, identifica dependências, separa o trabalho em fases e
 O roadmap se torna a espinha dorsal da execução. Nada é implementado fora dele.
 
 **steps:**
+
 - Abra o PLAN.md no seu agente de código
 - Peça revisão considerando que o agente vai executar
 - Peça para separar o trabalho em fases de desenvolvimento
@@ -113,6 +115,7 @@ Com o roadmap definido, a execução segue um ciclo por fase. Cada fase é trata
 Só avance para a próxima fase depois de validar a atual. Esse ciclo evita acúmulo de dívida técnica e mantém o projeto previsível do início ao fim.
 
 **steps:**
+
 - Peça ao agente para criar um plano de execução da fase atual
 - Peça uma PRD para a implementação
 - Execute a fase
@@ -129,6 +132,7 @@ Só avance para a próxima fase depois de validar a atual. Esse ciclo evita acú
 Reunimos templates prontos para cada etapa do fluxo. Use-os como ponto de partida: adapte, modifique, faça seu. O objetivo não é seguir um modelo rígido — é ter clareza desde o primeiro passo.
 
 **items:**
+
 - PLAN — template de planejamento de projeto
 - ROADMAP — template de roadmap de implementação
 - PRD — template de requisitos de produto
@@ -191,18 +195,18 @@ Each tool has its own pricing model and installation method. Here's the current 
 
 **ide:**
 
-| Tool | Plans | How to install |
-|------|-------|----------------|
+| Tool   | Plans                                                         | How to install                                      |
+| ------ | ------------------------------------------------------------- | --------------------------------------------------- |
 | Cursor | Hobby (free) · Pro ($20/mo) · Pro+ ($60/mo) · Ultra ($200/mo) | cursor.com — download the installer for your system |
-| Trae | Free · Pro ($10/mo or $7.50/mo annual) | trae.ai — download the installer for your system |
+| Trae   | Free · Pro ($10/mo or $7.50/mo annual)                        | trae.ai — download the installer for your system    |
 
 **cli:**
 
-| Tool | Plans | How to install |
-|------|-------|----------------|
-| Claude Code | Free · Pro ($20/mo) · Max 5x ($100/mo) · Max 20x ($200/mo) · or via API | `npm install -g @anthropic-ai/claude-code` |
-| Codex | Included in ChatGPT Plus ($20/mo) · Pro ($200/mo) · Business ($25/user/mo) | `npm install -g @openai/codex` |
-| OpenCode | Free and open-source (requires your own API keys) | `brew install opencode-ai/tap/opencode` or `go install github.com/opencode-ai/opencode@latest` |
+| Tool        | Plans                                                                      | How to install                                                                                 |
+| ----------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Claude Code | Free · Pro ($20/mo) · Max 5x ($100/mo) · Max 20x ($200/mo) · or via API    | `npm install -g @anthropic-ai/claude-code`                                                     |
+| Codex       | Included in ChatGPT Plus ($20/mo) · Pro ($200/mo) · Business ($25/user/mo) | `npm install -g @openai/codex`                                                                 |
+| OpenCode    | Free and open-source (requires your own API keys)                          | `brew install opencode-ai/tap/opencode` or `go install github.com/opencode-ai/opencode@latest` |
 
 **note:** Prices may change. Check official websites for updated pricing.
 
@@ -219,6 +223,7 @@ You can use any LLM to generate the initial plan — ChatGPT, Claude, Gemini. Wh
 The result should be a robust markdown file that serves as the source of truth for all development.
 
 **steps:**
+
 - Describe your idea with context: product type, audience, constraints
 - Ask for a stack suggestion aligned to the project
 - Review and adjust the plan until it makes sense
@@ -237,6 +242,7 @@ The agent analyzes the plan, identifies dependencies, breaks the work into phase
 The roadmap becomes the execution backbone. Nothing gets implemented outside of it.
 
 **steps:**
+
 - Open PLAN.md in your code agent
 - Ask for a review considering the agent will execute it
 - Ask it to break the work into development phases
@@ -253,6 +259,7 @@ With the roadmap defined, execution follows a per-phase cycle. Each phase is tre
 Only move to the next phase after validating the current one. This cycle prevents technical debt buildup and keeps the project predictable from start to finish.
 
 **steps:**
+
 - Ask the agent to create an execution plan for the current phase
 - Ask for a PRD for the implementation
 - Execute the phase
@@ -269,6 +276,7 @@ Only move to the next phase after validating the current one. This cycle prevent
 We've gathered ready-made templates for each stage of the flow. Use them as a starting point: adapt, modify, make them yours. The goal is not to follow a rigid model — it's to have clarity from the very first step.
 
 **items:**
+
 - PLAN — project planning template
 - ROADMAP — implementation roadmap template
 - PRD — product requirements template

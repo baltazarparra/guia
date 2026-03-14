@@ -2,41 +2,41 @@
 
 ## PRD Reference
 
-| Field    | Value |
-|----------|-------|
+| Field    | Value         |
+| -------- | ------------- |
 | PRD file | `docs/PRD.md` |
-| Date     | 2026-03-14 |
-| Author   | baltz |
+| Date     | 2026-03-14    |
+| Author   | baltz         |
 
 ## Decisions Summary
 
-| Decision | Justification |
-|----------|---------------|
-| Vite instead of Next.js | Static SPA with no SSR, API routes, or backend. Vite is simpler, lighter, and better suited for GitHub Pages deployment |
-| JavaScript instead of TypeScript | Reduces friction for a creative, experimental V1. JSDoc annotations as lightweight compromise |
-| React for UI | Component structure for modular sections, reusable motion wrappers, and clean R3F integration |
-| Tailwind CSS for styling | Accelerates UI iteration, reduces context switching, productive for controlled spacing |
-| React Three Fiber + Drei for 3D | React-based orchestration, easier scene management, mobile-aware simplification |
-| GSAP + ScrollTrigger for scroll animation | Robust scroll-based orchestration, section progress syncing, better than ad hoc scroll logic |
-| Zustand as GSAP ↔ R3F bridge | Prevents race conditions and jank from mixing GSAP's DOM control with R3F's render loop |
-| GitHub Pages deployment | Perfect fit for static project, simple hosting |
-| Hardcoded bilingual copy (no i18n framework) | One page, curated narrative, content will change during concept maturation. i18n framework adds friction without value |
-| Start with Tier 1 notebook complexity | Minimum viable 3D: static model, rotation/position transitions, open/closed states. Advance only after stability confirmed |
-| 3D as progressive enhancement | Page must work without WebGL. Error boundary with CSS fallback ensures content remains accessible |
-| Draft copy as hard dependency | No lorem ipsum. Even rough real content produces better layout decisions |
-| Mobile-first design approach | Expected majority mobile access. Base styles target mobile, `md:` and above for tablet/desktop |
+| Decision                                     | Justification                                                                                                              |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Vite instead of Next.js                      | Static SPA with no SSR, API routes, or backend. Vite is simpler, lighter, and better suited for GitHub Pages deployment    |
+| JavaScript instead of TypeScript             | Reduces friction for a creative, experimental V1. JSDoc annotations as lightweight compromise                              |
+| React for UI                                 | Component structure for modular sections, reusable motion wrappers, and clean R3F integration                              |
+| Tailwind CSS for styling                     | Accelerates UI iteration, reduces context switching, productive for controlled spacing                                     |
+| React Three Fiber + Drei for 3D              | React-based orchestration, easier scene management, mobile-aware simplification                                            |
+| GSAP + ScrollTrigger for scroll animation    | Robust scroll-based orchestration, section progress syncing, better than ad hoc scroll logic                               |
+| Zustand as GSAP ↔ R3F bridge                 | Prevents race conditions and jank from mixing GSAP's DOM control with R3F's render loop                                    |
+| GitHub Pages deployment                      | Perfect fit for static project, simple hosting                                                                             |
+| Hardcoded bilingual copy (no i18n framework) | One page, curated narrative, content will change during concept maturation. i18n framework adds friction without value     |
+| Start with Tier 1 notebook complexity        | Minimum viable 3D: static model, rotation/position transitions, open/closed states. Advance only after stability confirmed |
+| 3D as progressive enhancement                | Page must work without WebGL. Error boundary with CSS fallback ensures content remains accessible                          |
+| Draft copy as hard dependency                | No lorem ipsum. Even rough real content produces better layout decisions                                                   |
+| Mobile-first design approach                 | Expected majority mobile access. Base styles target mobile, `md:` and above for tablet/desktop                             |
 
 ## Risk Assessment
 
-| Risk | Severity | Mitigation | Status |
-|------|----------|------------|--------|
-| 3D complexity grows beyond performance budget | High | Complexity tiers (start Tier 1). 2.5D CSS fallback as escape hatch | Mitigated |
-| R3F + GSAP integration causes jank or race conditions | High | Phase 3 spike validates pattern before full build. Strict domain separation (GSAP = DOM, R3F = WebGL, Zustand = bridge) | Mitigated |
-| Mobile experience degrades | High | Mobile-first design. `useReducedComplexity` hook. Early testing on iPhone-class viewports. 2.5D fallback for low-end devices | Mitigated |
-| Scroll orchestration becomes fragile | Medium | Centralized motion logic. Declarative section → notebook state map. No scattered triggers | Mitigated |
-| AI-generated code introduces unnecessary complexity | Medium | Small isolated tasks. Validate every major step. Reject speculative abstractions | Mitigated |
-| Copy dependency blocks implementation | Medium | Draft copy required as pre-requisite. Draft quality accepted for initial build, refined in Phase 5 | Mitigated |
-| Visual references become imitation | Low | References used for tone/pacing only. Original content structure and metaphor preserved | Mitigated |
+| Risk                                                  | Severity | Mitigation                                                                                                                   | Status    |
+| ----------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- | --------- |
+| 3D complexity grows beyond performance budget         | High     | Complexity tiers (start Tier 1). 2.5D CSS fallback as escape hatch                                                           | Mitigated |
+| R3F + GSAP integration causes jank or race conditions | High     | Phase 3 spike validates pattern before full build. Strict domain separation (GSAP = DOM, R3F = WebGL, Zustand = bridge)      | Mitigated |
+| Mobile experience degrades                            | High     | Mobile-first design. `useReducedComplexity` hook. Early testing on iPhone-class viewports. 2.5D fallback for low-end devices | Mitigated |
+| Scroll orchestration becomes fragile                  | Medium   | Centralized motion logic. Declarative section → notebook state map. No scattered triggers                                    | Mitigated |
+| AI-generated code introduces unnecessary complexity   | Medium   | Small isolated tasks. Validate every major step. Reject speculative abstractions                                             | Mitigated |
+| Copy dependency blocks implementation                 | Medium   | Draft copy required as pre-requisite. Draft quality accepted for initial build, refined in Phase 5                           | Mitigated |
+| Visual references become imitation                    | Low      | References used for tone/pacing only. Original content structure and metaphor preserved                                      | Mitigated |
 
 ## Generated Tasks
 
@@ -144,13 +144,13 @@
 
 ## Implementation Readiness
 
-| Criterion | Status | Notes |
-|-----------|--------|-------|
-| Scope clearly defined | Yes | 8 sections (Hero, Agents, Tools, Plan, Roadmap, Execution, Templates, Closing), bilingual, 3D notebook, static deployment |
-| Risks identified and mitigated | Yes | 8 risks identified with concrete mitigations, including pricing data staleness |
-| Dependencies resolved | Yes | All 6 pre-requisites (P.1–P.6) have been completed |
-| Open questions answered | Yes | All design and architectural decisions are documented in PLAN.md |
-| Success criteria are testable | Yes | 17 observable, verifiable conditions listed. Performance thresholds are quantified |
+| Criterion                      | Status | Notes                                                                                                                     |
+| ------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------- |
+| Scope clearly defined          | Yes    | 8 sections (Hero, Agents, Tools, Plan, Roadmap, Execution, Templates, Closing), bilingual, 3D notebook, static deployment |
+| Risks identified and mitigated | Yes    | 8 risks identified with concrete mitigations, including pricing data staleness                                            |
+| Dependencies resolved          | Yes    | All 6 pre-requisites (P.1–P.6) have been completed                                                                        |
+| Open questions answered        | Yes    | All design and architectural decisions are documented in PLAN.md                                                          |
+| Success criteria are testable  | Yes    | 17 observable, verifiable conditions listed. Performance thresholds are quantified                                        |
 
 ## Readiness Verdict
 

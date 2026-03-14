@@ -15,9 +15,11 @@ export default function PlanSection() {
         ))}
       </CopyBlock>
 
-      <ol className="mt-8 list-decimal list-inside space-y-3 text-base md:text-lg text-muted leading-relaxed">
+      <ol className="text-muted mt-8 list-inside list-decimal space-y-3 text-base leading-relaxed md:text-lg">
         {t.plan.steps.map((step, i) => (
-          <li key={i} className="pl-2">{step}</li>
+          <li key={i} className="pl-2">
+            {step}
+          </li>
         ))}
       </ol>
     </SectionContainer>

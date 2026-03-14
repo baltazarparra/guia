@@ -7,16 +7,11 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative"
+      className="relative flex min-h-screen flex-col items-center justify-center px-6 text-center"
     >
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground tracking-tight">
-          {t.hero.title}
-        </h1>
-        <p className="mt-4 text-xl md:text-2xl text-muted">
-          {t.hero.subtitle}
-        </p>
-        <CopyBlock className="mt-8 max-w-2xl mx-auto">
+      <div className="mx-auto max-w-3xl">
+        <p className="text-muted mt-4 text-xl md:text-2xl">{t.hero.subtitle}</p>
+        <CopyBlock className="mx-auto mt-8 max-w-2xl">
           <p>{t.hero.body}</p>
         </CopyBlock>
       </div>
