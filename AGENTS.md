@@ -36,8 +36,9 @@ npm run test:watch # testes em modo watch
 src/
   components/
     layout/       # PageShell, SectionContainer, LanguageToggle, BackgroundLayer
-    sections/     # HeroSection, AgentsSection, ToolsSection, PlanSection,
-                  # RoadmapSection, ExecutionSection, TemplatesSection, ClosingSection
+    sections/     # HeroSection, AgentsSection, ModelsSection, ToolsSection,
+                  # PlanSection, RoadmapSection, ExecutionSection,
+                  # BootstrapSection, TemplatesSection, ClosingSection
     ui/           # Button, Pill, SectionHeading, CopyBlock
     three/        # NotebookScene, NotebookModel, SceneLights, SceneController,
                   # WebGLErrorBoundary, MobileSceneVariant
@@ -49,6 +50,7 @@ src/
   App.jsx
   main.jsx
 public/
+  llms.txt        # Machine-readable bootstrap instructions for code agents
   models/         # (reserved — using procedural geometry for notebook)
   textures/       # texture assets if any
 .github/
@@ -114,10 +116,12 @@ Copy is hardcoded in `src/content/pt.js` and `src/content/en.js`. Both files exp
 export default {
   hero: { title, subtitle, body },
   agents: { title, body, categories: [] },
+  models: { title, body, lastUpdated, note, filters: [], items: [] },
   tools: { title, body, lastUpdated, ide: [], cli: [], note },
   plan: { title, body, steps: [] },
   roadmap: { title, body, steps: [] },
   execution: { title, body, steps: [] },
+  bootstrap: { title, body, instruction, urlLabel, copiedLabel },
   templates: { title, body, items: [] },
   closing: { title, body, cta },
 }

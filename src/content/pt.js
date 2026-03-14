@@ -2,7 +2,9 @@ export default {
   hero: {
     title: 'Guia prático',
     subtitle: 'para desenvolvimento com agentes de código.',
-    body: 'Agentes de código estão mudando a forma como software é construído. Mas sem um fluxo claro, velocidade vira caos. Proxy te guia do zero, da escolha da ferramenta até a entrega, com um método simples que funciona com qualquer agente.',
+    prompt:
+      'Leia o conteúdo de https://baltazarparra.github.io/proxy/llms.txt e siga as instruções para me guiar na criação de um novo projeto de software.',
+    copiedLabel: 'Copiado!',
   },
 
   agents: {
@@ -47,6 +49,124 @@ export default {
               'Agente de terminal open-source. Suporta vários provedores (Claude, GPT, Gemini, Ollama). Gratuito, você só precisa das suas próprias chaves de API.',
           },
         ],
+      },
+    ],
+  },
+
+  models: {
+    title: 'Os modelos por trás dos agentes',
+    body: 'Cada agente de código usa um LLM como cérebro. O modelo que você escolhe muda o custo, a velocidade e a qualidade do código gerado. Aqui estão os 10 mais usados hoje.',
+    lastUpdated: 'Março 2026',
+    note: 'Preços e especificações mudam com frequência. Consulte os sites oficiais pra valores atualizados.',
+    filters: [
+      { id: 'all', label: 'Todos' },
+      { id: 'anthropic', label: 'Anthropic' },
+      { id: 'openai', label: 'OpenAI' },
+      { id: 'google', label: 'Google' },
+      { id: 'opensource', label: 'Open-source' },
+    ],
+    items: [
+      {
+        name: 'Claude Sonnet 4.6',
+        family: 'anthropic',
+        costLabel: 'Custo médio',
+        pricing: '$3 / $15 por 1M tokens',
+        description: 'Melhor equilíbrio entre velocidade e inteligência pra código.',
+        context: '1M tokens',
+        strengths: ['Refatoração complexa', 'Edição multi-arquivo', 'Code review detalhado'],
+        availableIn: ['Cursor', 'Claude Code', 'OpenCode'],
+      },
+      {
+        name: 'Claude Opus 4.6',
+        family: 'anthropic',
+        costLabel: 'Premium',
+        pricing: '$5 / $25 por 1M tokens',
+        description: 'Modelo mais capaz pra tarefas complexas e críticas.',
+        context: '1M tokens',
+        strengths: ['Arquitetura complexa', 'Debug de bugs difíceis', 'Raciocínio profundo'],
+        availableIn: ['Cursor', 'Claude Code'],
+      },
+      {
+        name: 'Claude Haiku 4.5',
+        family: 'anthropic',
+        costLabel: 'Acessível',
+        pricing: '$1 / $5 por 1M tokens',
+        description: 'Rápido e barato, com qualidade surpreendente pra código.',
+        context: '200K tokens',
+        strengths: ['Tarefas rápidas', 'Alto volume de requests', 'Edições simples'],
+        availableIn: ['Cursor', 'Claude Code', 'OpenCode'],
+      },
+      {
+        name: 'GPT-5.4',
+        family: 'openai',
+        costLabel: 'Custo médio',
+        pricing: '$2.50 / $15 por 1M tokens',
+        description: 'Flagship mais recente da OpenAI, forte em tarefas profissionais.',
+        context: '1M tokens',
+        strengths: ['Raciocínio avançado', 'Tarefas profissionais', 'Geração de código'],
+        availableIn: ['Cursor', 'Codex', 'ChatGPT'],
+      },
+      {
+        name: 'GPT-4.1',
+        family: 'openai',
+        costLabel: 'Acessível',
+        pricing: '$2 / $8 por 1M tokens',
+        description: 'Cavalo de batalha confiável, ótimo custo-benefício pra código.',
+        context: '1M tokens',
+        strengths: ['Custo-benefício', 'Seguir instruções', 'Coding consistente'],
+        availableIn: ['Cursor', 'Codex', 'OpenCode'],
+      },
+      {
+        name: 'o3',
+        family: 'openai',
+        costLabel: 'Custo médio',
+        pricing: '$2 / $8 por 1M tokens',
+        description:
+          'Modelo de raciocínio avançado. Tokens internos de raciocínio aumentam o custo real.',
+        context: '200K tokens',
+        strengths: ['Lógica complexa', 'Problemas multi-etapa', 'Raciocínio matemático'],
+        availableIn: ['Cursor', 'ChatGPT'],
+      },
+      {
+        name: 'Gemini 3.1 Pro',
+        family: 'google',
+        costLabel: 'Custo médio',
+        pricing: '$2 / $12 por 1M tokens',
+        description: 'Modelo mais avançado do Google. Líder em 12 de 18 benchmarks.',
+        context: '1M tokens',
+        strengths: ['Análise de codebases grandes', 'Raciocínio multimodal', 'Contexto massivo'],
+        availableIn: ['Cursor', 'Google AI Studio'],
+      },
+      {
+        name: 'Gemini 3 Flash',
+        family: 'google',
+        costLabel: 'Acessível',
+        pricing: '$0.50 / $3 por 1M tokens',
+        description: '3x mais rápido que Gemini 2.5 Pro, excelente custo-benefício.',
+        context: '1M tokens',
+        strengths: ['Velocidade', 'Custo baixo', 'Contexto de 1M tokens'],
+        availableIn: ['Cursor', 'Google AI Studio'],
+      },
+      {
+        name: 'DeepSeek R1',
+        family: 'opensource',
+        costLabel: 'Mais acessível',
+        pricing: '$0.55 / $2.19 por 1M tokens',
+        description:
+          'Modelo de raciocínio open-source, competitivo com o1 por uma fração do custo.',
+        context: '128K tokens',
+        strengths: ['Open-source', 'Raciocínio barato', 'Comunidade ativa'],
+        availableIn: ['Cursor', 'OpenCode'],
+      },
+      {
+        name: 'Qwen3 Coder',
+        family: 'opensource',
+        costLabel: 'Mais acessível',
+        pricing: '$0.22 / $1 por 1M tokens',
+        description: 'O mais barato pra código. Open-weight, roda localmente via Ollama.',
+        context: '262K tokens',
+        strengths: ['Mais barato do mercado', 'Roda local', 'Especialista em código'],
+        availableIn: ['Cursor', 'OpenCode', 'Ollama'],
       },
     ],
   },
@@ -122,6 +242,15 @@ export default {
     ],
   },
 
+  bootstrap: {
+    title: 'Deixe o agente começar por você',
+    body: 'Você acabou de aprender o fluxo completo. Agora a parte boa: você não precisa fazer tudo isso na mão. Cole a URL abaixo no seu agente de código e ele vai te guiar por cada etapa, fazer as perguntas certas e criar os arquivos do seu projeto automaticamente.',
+    instruction:
+      'Copie a URL abaixo e cole no chat do seu agente de código (Cursor, Claude Code, ou qualquer outro). O agente vai ler as instruções e te guiar pelo processo.',
+    urlLabel: 'Copiar URL',
+    copiedLabel: 'Copiado!',
+  },
+
   templates: {
     title: 'Comece com estrutura, não do zero',
     body: 'Reunimos templates prontos pra cada etapa do fluxo. Use como ponto de partida: adapte, modifique, faça do seu jeito. O objetivo não é seguir um modelo rígido, é ter clareza desde o primeiro passo.',
@@ -150,6 +279,63 @@ export default {
         name: 'Skills',
         description: 'Template de habilidades reutilizáveis do agente',
         url: 'https://github.com/baltazarparra/proxy/blob/main/templates/SKILLS-TEMPLATE.md',
+      },
+    ],
+  },
+
+  glossary: {
+    title: 'Glossário AI Native',
+    body: 'Os 10 termos que você vai ouvir o tempo todo. Sem enrolação.',
+    terms: [
+      {
+        term: 'LLM',
+        definition:
+          'O "cérebro" da IA. Um modelo gigante treinado com texto da internet inteira. É ele que gera código, texto, e as alucinações também.',
+      },
+      {
+        term: 'Prompt',
+        definition:
+          'A instrução que você manda pra IA. Quanto mais claro, melhor o resultado. Quanto mais vago, mais surpresa.',
+      },
+      {
+        term: 'Agente de IA',
+        definition:
+          'Uma IA que não só responde, ela age. Lê seus arquivos, edita código, roda comandos. Tipo um dev júnior que nunca dorme.',
+      },
+      {
+        term: 'Context Window',
+        definition:
+          'A "memória de trabalho" da IA. Tudo que ela consegue considerar de uma vez. Acabou a janela, ela esquece o começo da conversa.',
+      },
+      {
+        term: 'Token',
+        definition:
+          'A unidade de texto que a IA processa. Não é uma palavra exata, é um pedaço dela. Você paga por token, então sim, cada vírgula conta.',
+      },
+      {
+        term: 'Alucinação',
+        definition:
+          'Quando a IA inventa algo com total confiança. Parece certo, parece lógico, mas é mentira. Sempre confira.',
+      },
+      {
+        term: 'RAG',
+        definition:
+          'Retrieval-Augmented Generation. Em vez de inventar, a IA busca informação real primeiro e depois responde. Tipo colar na prova, mas com fontes.',
+      },
+      {
+        term: 'MCP',
+        definition:
+          'Model Context Protocol. Um padrão que conecta a IA a ferramentas externas (banco de dados, APIs, arquivos). Tipo um USB universal pra IA.',
+      },
+      {
+        term: 'Vibe Coding',
+        definition:
+          'Programar descrevendo o que você quer em linguagem natural e deixar a IA escrever o código. Funciona até quebrar. Aí você precisa de método.',
+      },
+      {
+        term: 'Fine-tuning',
+        definition:
+          'Treinar um modelo base com seus próprios dados pra ele ficar bom numa tarefa específica. Tipo ensinar um chef generalista a fazer só sushi.',
       },
     ],
   },

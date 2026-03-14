@@ -14,10 +14,12 @@ const useScrollStore = create((set) => ({
   sectionProgress: {
     hero: 0,
     agents: 0,
+    models: 0,
     tools: 0,
     plan: 0,
     roadmap: 0,
     execution: 0,
+    bootstrap: 0,
     templates: 0,
     closing: 0,
   },

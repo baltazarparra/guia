@@ -20,15 +20,17 @@ describe('smoke tests', () => {
     expect(screen.getByText('Guia prático')).toBeInTheDocument()
   })
 
-  it('renders all 8 section IDs', () => {
+  it('renders all 10 section IDs', () => {
     const { container } = render(<App />)
     const expectedIds = [
       'hero',
       'agents',
+      'models',
       'tools',
       'plan',
       'roadmap',
       'execution',
+      'bootstrap',
       'templates',
       'closing',
     ]
