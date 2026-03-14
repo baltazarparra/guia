@@ -737,12 +737,13 @@ Before moving to Phase 7, verify:
   - Verify 3D scene loads and transitions work
   - Done: production site works exactly as expected
 
-- [ ] **7.3**: Create social sharing image
+- [x] **7.3**: Create social sharing image
   - Create a 1200x630px image for Open Graph
   - Design: simple branded card with "Proxy" name and tagline
   - Place in `public/og-image.png` (or similar)
   - Update `og:image` meta tag in `index.html` with the production URL
   - Done: image exists and meta tag points to the correct URL
+  - **Result:** Created `public/og-image.png` (1200x630px, dark background with "Proxy" title and PT-BR tagline). Fixed `og:url` and `og:image` meta tags (replaced `USERNAME` with `baltazarparra`). Added `<link rel="canonical">`. Created `public/favicon.svg` (minimal notebook icon with accent color)
 
 - [ ] **7.4**: Verify OG tags
   - Use [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) or [OpenGraph.xyz](https://www.opengraph.xyz/)
@@ -750,13 +751,14 @@ Before moving to Phase 7, verify:
   - Fix any issues with tag content or image URL
   - Done: sharing preview looks correct
 
-- [ ] **7.5**: Update README
+- [x] **7.5**: Update README
   - Add project description (what Proxy is, who it's for)
   - Add local development instructions (`npm install`, `npm run dev`)
   - Add build and deploy instructions
   - Add link to the live site
   - File modified: `README.md`
   - Done: README provides clear context and instructions for any visitor
+  - **Result:** Updated status from "Planning phase" to live with link. Added `npm run check` commands. Updated project structure (removed `public/models`, added `WebGLErrorBoundary`, `notebookStates.js`, `templates/`). Moved docs to a dedicated section. Updated contributing text
 
 - [ ] **7.6**: Verify all template links
   - Click every CTA and template link on the production page
@@ -774,6 +776,6 @@ Before moving to Phase 7, verify:
 
 - [ ] site is live on GitHub Pages
 - [ ] sharing preview works
-- [ ] README is complete
+- [x] README is complete
 - [ ] all links work
 - [ ] all acceptance criteria from PLAN.md section 29 are met

@@ -6,21 +6,13 @@ Proxy is not a tool or a framework. It is a single long-form scroll experience t
 
 Built with Vite, React, Tailwind CSS, React Three Fiber, and GSAP. Deployed as a static site on GitHub Pages.
 
+**Live site:** [baltazarparra.github.io/proxy](https://baltazarparra.github.io/proxy/)
+
 ## Why this exists
 
 Most people starting with AI coding agents jump straight into prompting and hope for the best. The result is often fast chaos instead of fast delivery.
 
 Proxy presents a simple, practical workflow that helps beginners build with more structure. It covers stack decisions, planning documents, execution models, and reusable templates — all explained through a calm, editorial scroll experience with a 3D notebook as the central visual metaphor.
-
-## Status
-
-**Planning phase.** The project has a complete product plan and implementation roadmap. No application code has been written yet.
-
-| Document                                                 | Purpose                                                                             |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [`PLAN.md`](PLAN.md)                                     | Full product spec — vision, stack, architecture, phases, risks, acceptance criteria |
-| [`IMPLEMENTATION-ROADMAP.md`](IMPLEMENTATION-ROADMAP.md) | Task-level execution guide — 57 atomic tasks across 7 phases                        |
-| [`AGENTS.md`](AGENTS.md)                                 | Instructions for AI coding agents working on this project                           |
 
 ## Stack
 
@@ -50,6 +42,14 @@ npm run build
 npm run preview
 ```
 
+Validate code quality:
+
+```bash
+npm run check    # lint + format check + typecheck + tests
+npm run lint:fix # auto-fix lint issues
+npm run format   # auto-format all files
+```
+
 ## Project structure
 
 ```
@@ -59,12 +59,13 @@ src/
     sections/     HeroSection, AgentsSection, ToolsSection, PlanSection,
                   RoadmapSection, ExecutionSection, TemplatesSection, ClosingSection
     ui/           Button, SectionHeading, CopyBlock
-    three/        NotebookScene, NotebookModel, SceneController, SceneLights
-  content/        Bilingual copy (pt.js, en.js)
+    three/        NotebookScene, NotebookModel, SceneController, SceneLights,
+                  WebGLErrorBoundary
+  content/        Bilingual copy (pt.js, en.js), notebookStates.js
   hooks/          Scroll progress, language, reduced complexity, notebook state
   styles/         Global styles, Tailwind extensions
-public/
-  models/         3D notebook model (.glb)
+templates/        Reusable project documentation templates (PLAN, ROADMAP, PRD, etc.)
+public/           Static assets (favicon, OG image)
 ```
 
 ## Architecture
@@ -82,9 +83,17 @@ The 3D notebook is a progressive enhancement. The page is fully functional witho
 
 Content is available in PT-BR and EN, switchable via a toggle that preserves scroll position.
 
+## Documentation
+
+| Document                                                 | Purpose                                                                             |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [`PLAN.md`](PLAN.md)                                     | Full product spec — vision, stack, architecture, phases, risks, acceptance criteria |
+| [`IMPLEMENTATION-ROADMAP.md`](IMPLEMENTATION-ROADMAP.md) | Task-level execution guide — 57 atomic tasks across 7 phases                        |
+| [`AGENTS.md`](AGENTS.md)                                 | Instructions for AI coding agents working on this project                           |
+
 ## Contributing
 
-This project is in early development. If you'd like to contribute, start by reading [`PLAN.md`](PLAN.md) for context and [`IMPLEMENTATION-ROADMAP.md`](IMPLEMENTATION-ROADMAP.md) for the current execution plan.
+If you'd like to contribute, start by reading [`PLAN.md`](PLAN.md) for context and [`IMPLEMENTATION-ROADMAP.md`](IMPLEMENTATION-ROADMAP.md) for the current execution plan.
 
 ## License
 
