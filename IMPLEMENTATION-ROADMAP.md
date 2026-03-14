@@ -69,12 +69,12 @@ These must be resolved before Phase 1 begins. No code should be written until al
   - Files created: `package.json`, `vite.config.js`, `src/main.jsx`, `src/App.jsx`, `index.html`
   - Done: `npm run dev` starts and shows the default Vite React page in the browser
 
-- [ ] **1.2**: Install and configure Tailwind CSS
-  - Install Tailwind CSS, PostCSS, and Autoprefixer
-  - Create `tailwind.config.js` and `postcss.config.js`
-  - Add Tailwind directives to `src/styles/globals.css`
+- [ ] **1.2**: Install and configure Tailwind CSS v4
+  - Install `tailwindcss` and `@tailwindcss/vite`
+  - Add `tailwindcss()` plugin to `vite.config.js`
+  - Create `src/styles/globals.css` with `@import 'tailwindcss'`
   - Wire `globals.css` into `main.jsx`
-  - Files created: `tailwind.config.js`, `postcss.config.js`, `src/styles/globals.css`
+  - Files created: `src/styles/globals.css`. Files modified: `vite.config.js`
   - Done: a Tailwind utility class (e.g. `text-red-500`) renders correctly in the browser
 
 - [ ] **1.3**: Configure Vite for GitHub Pages
@@ -92,23 +92,22 @@ These must be resolved before Phase 1 begins. No code should be written until al
   - Done: workflow file exists and is syntactically valid (manual verification or dry-run)
 
 - [ ] **1.5**: Load typography
-  - Add the chosen font (from P.3) via Google Fonts link in `index.html` or via `@font-face` in CSS
-  - Set it as the default font family in `tailwind.config.js` (`fontFamily.sans`)
-  - Files modified: `index.html` or `src/styles/globals.css`, `tailwind.config.js`
+  - Add the chosen font (from P.3) via Google Fonts link in `index.html`
+  - Register font in `@theme` directive in `globals.css` (`--font-sans`)
+  - Files modified: `index.html`, `src/styles/globals.css`
   - Done: body text renders in the chosen font in the browser
 
 - [ ] **1.6**: Define color tokens in Tailwind
-  - Extend `tailwind.config.js` theme with color tokens from P.4
-  - Tokens: `background`, `foreground`, `muted`, `accent`, `surface` (plus any shades)
-  - Use CSS custom properties for easy runtime switching if needed
-  - Files modified: `tailwind.config.js`, `src/styles/globals.css`
+  - Define color tokens via `@theme` directive in `globals.css` (`--color-background`, `--color-foreground`, `--color-muted`, `--color-accent`, `--color-surface`)
+  - Tailwind v4 `@theme` variables automatically generate utility classes
+  - Files modified: `src/styles/globals.css`
   - Done: `bg-background`, `text-foreground`, `text-accent` etc. work in JSX
 
 - [ ] **1.7**: Establish spacing rhythm
-  - Define section spacing scale in Tailwind config (e.g. `section` padding, `gap` values)
+  - Define spacing tokens via `@theme` in `globals.css` (`--spacing-section`, `--spacing-section-lg`, `--spacing-content`)
   - Document vertical rhythm: section padding, heading margins, paragraph spacing
-  - Files modified: `tailwind.config.js`
-  - Done: spacing tokens are usable (`py-section`, `gap-content`, etc.)
+  - Files modified: `src/styles/globals.css`
+  - Done: spacing tokens are usable (`py-section`, `py-section-lg`, `gap-content`, etc.)
 
 - [ ] **1.8**: Create directory structure
   - Create all directories defined in PLAN.md section 16
@@ -132,9 +131,9 @@ These must be resolved before Phase 1 begins. No code should be written until al
   - Done: two `<SectionContainer>` blocks render with correct spacing in browser
 
 - [ ] **1.11**: Define responsive breakpoints
-  - Confirm or customize Tailwind's default breakpoints (`sm`, `md`, `lg`, `xl`)
+  - Confirm Tailwind v4 default breakpoints (`sm: 40rem`, `md: 48rem`, `lg: 64rem`, `xl: 80rem`)
   - Ensure mobile-first approach: base styles target mobile, `md:` and above for tablet/desktop
-  - Files modified: `tailwind.config.js` (only if custom breakpoints needed)
+  - No files modified (using Tailwind v4 defaults)
   - Done: a `hidden md:block` element is hidden on mobile and visible on desktop in browser
 
 - [ ] **1.12**: Configure `index.html` with SEO and OG tags

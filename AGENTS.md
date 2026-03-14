@@ -77,7 +77,7 @@ The 3D notebook is an enhancement, not a dependency. The page must be fully func
 - JavaScript (not TypeScript). Use JSDoc annotations on key component props
 - Functional components only
 - Tailwind CSS for all styling. No inline style objects unless required by R3F
-- Use design tokens from `tailwind.config.js` (colors: `background`, `foreground`, `muted`, `accent`, `surface`)
+- Use design tokens defined via `@theme` in `src/styles/globals.css` (colors: `background`, `foreground`, `muted`, `accent`, `surface`)
 - Semantic HTML: `<section>`, `<h1>`-`<h3>`, `<p>`, `<button>`, `<a>`
 - Mobile-first: base styles target mobile, `md:` and above for tablet/desktop
 
