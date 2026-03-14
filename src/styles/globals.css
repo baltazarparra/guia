@@ -14,6 +14,11 @@
   --spacing-content: 2rem;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   @apply bg-background text-foreground antialiased;
+  overflow-x: hidden;
 }
