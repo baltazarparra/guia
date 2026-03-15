@@ -27,7 +27,7 @@ export default function AgentsSection() {
                 {category.tools.map((tool) => (
                   <div
                     key={tool.name}
-                    className="bg-surface border-accent/20 rounded-lg border-t-2 p-5"
+                    className="bg-surface border-accent/20 rounded-lg border-t-2 p-4 md:p-5"
                   >
                     <p className="text-foreground font-semibold">{tool.name}</p>
                     <p className="text-muted mt-1 text-sm">{tool.description}</p>

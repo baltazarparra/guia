@@ -23,7 +23,7 @@ export default function TemplatesSection() {
           {t.templates.items.map((item) => (
             <div
               key={item.name}
-              className="bg-surface border-accent/20 flex flex-col rounded-lg border-t-2 p-5"
+              className="bg-surface border-accent/20 flex flex-col rounded-lg border-t-2 p-4 md:p-5"
             >
               <p className="text-accent text-lg font-semibold">{item.name}</p>
               <p className="text-muted mt-2 flex-1 text-sm">{item.description}</p>

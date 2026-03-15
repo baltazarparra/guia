@@ -12,7 +12,7 @@ function FilterPill({ filter, isActive, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`focus:ring-accent/50 rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 focus:ring-2 focus:outline-none ${
+      className={`focus:ring-accent/50 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 focus:ring-2 focus:outline-none ${
         isActive ? 'bg-accent text-background' : 'bg-surface text-muted hover:text-foreground'
       }`}
     >
@@ -44,9 +44,9 @@ function ModelCard({ model, isExpanded, onToggle, index, isVisible }) {
       tabIndex={isVisible ? 0 : -1}
       aria-expanded={isExpanded}
     >
-      <div className="p-5">
+      <div className="p-4 md:p-5">
         <div className="flex items-start justify-between gap-3">
-          <p className="text-accent text-lg font-semibold">{model.name}</p>
+          <p className="text-accent min-w-0 text-lg font-semibold">{model.name}</p>
           <span className="text-muted bg-background shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium">
             {model.costLabel}
           </span>
@@ -59,7 +59,7 @@ function ModelCard({ model, isExpanded, onToggle, index, isVisible }) {
         style={{ gridTemplateRows: isExpanded ? '1fr' : '0fr' }}
       >
         <div className="overflow-hidden">
-          <div className="border-accent/10 border-t px-5 pt-4 pb-5">
+          <div className="border-accent/10 border-t px-4 pt-4 pb-4 md:px-5 md:pb-5">
             <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs">
               <span className="text-muted">
                 <span className="text-foreground font-medium">{model.pricing}</span>

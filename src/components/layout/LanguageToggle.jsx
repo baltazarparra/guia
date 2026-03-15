@@ -7,7 +7,7 @@ export default function LanguageToggle() {
     <div className="bg-surface/80 fixed top-4 right-4 z-50 flex gap-1 rounded-lg p-1 backdrop-blur-sm">
       <button
         onClick={() => setLang('pt')}
-        className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+        className={`rounded-md px-4 py-2.5 text-sm font-medium transition-colors ${
           lang === 'pt' ? 'bg-accent/15 text-accent shadow-sm' : 'text-muted hover:text-foreground'
         }`}
       >
@@ -15,7 +15,7 @@ export default function LanguageToggle() {
       </button>
       <button
         onClick={() => setLang('en')}
-        className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+        className={`rounded-md px-4 py-2.5 text-sm font-medium transition-colors ${
           lang === 'en' ? 'bg-accent/15 text-accent shadow-sm' : 'text-muted hover:text-foreground'
         }`}
       >

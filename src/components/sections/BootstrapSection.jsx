@@ -28,11 +28,11 @@ export default function BootstrapSection() {
           <p>{t.bootstrap.body}</p>
         </CopyBlock>
 
-        <div className="bg-surface border-accent/30 mt-10 rounded-lg border p-6 md:p-8">
+        <div className="bg-surface border-accent/30 mt-10 rounded-lg border p-5 md:p-8">
           <p className="text-muted mb-4 text-sm">{t.bootstrap.instruction}</p>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <code className="bg-background text-accent flex-1 truncate rounded px-4 py-3 text-sm font-medium">
+            <code className="bg-background text-accent min-w-0 flex-1 rounded px-4 py-3 text-xs font-medium break-all sm:text-sm">
               {LLMS_URL}
             </code>
             <button

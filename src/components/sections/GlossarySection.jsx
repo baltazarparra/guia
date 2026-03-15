@@ -22,7 +22,7 @@ export default function GlossarySection() {
           {t.glossary.terms.map((item) => (
             <div
               key={item.term}
-              className="border-accent bg-surface rounded-lg border-t-2 px-5 py-4"
+              className="border-accent/40 bg-surface rounded-lg border-t-2 px-4 py-3.5 md:px-5 md:py-4"
             >
               <h3 className="text-accent mb-1 text-lg font-bold">{item.term}</h3>
               <p className="text-muted text-sm leading-relaxed">{item.definition}</p>

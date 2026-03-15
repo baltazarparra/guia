@@ -7,12 +7,12 @@ import CopyBlock from '../ui/CopyBlock'
 
 function ToolCard({ tool, isCli }) {
   return (
-    <div className="bg-surface border-accent/20 rounded-lg border-t-2 p-5">
+    <div className="bg-surface border-accent/20 rounded-lg border-t-2 p-4 md:p-5">
       <p className="text-accent text-lg font-semibold">{tool.name}</p>
-      <p className="text-muted mt-2 text-sm">{tool.plans}</p>
+      <p className="text-muted mt-2 text-sm leading-relaxed">{tool.plans}</p>
       <div className="mt-3">
         {isCli ? (
-          <code className="bg-accent/10 text-foreground block overflow-x-auto rounded px-3 py-2 font-mono text-sm">
+          <code className="bg-accent/10 text-foreground block rounded px-3 py-2 font-mono text-xs break-all sm:text-sm">
             {tool.install}
           </code>
         ) : (

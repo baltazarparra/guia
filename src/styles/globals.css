@@ -21,4 +21,6 @@ html {
 body {
   @apply bg-background text-foreground antialiased;
   overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
