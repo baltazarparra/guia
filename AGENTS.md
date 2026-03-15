@@ -2,7 +2,7 @@
 
 ## Project overview
 
-Guia is a static single-page landing page that explains agentic development to beginners. It is a long-form, scroll-driven editorial experience with a 3D diamond as the central visual element. Bilingual: PT-BR and EN. Deployed to GitHub Pages.
+gu**ia** is a static single-page landing page that explains agentic development to beginners. It is a long-form, scroll-driven editorial experience with a 3D diamond as the central visual element. Bilingual: PT-BR and EN. Deployed to GitHub Pages.
 
 Full product spec: `PLAN.md`
 Task-level execution guide: `IMPLEMENTATION-ROADMAP.md`

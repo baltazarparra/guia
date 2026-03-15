@@ -17,7 +17,8 @@ vi.mock('../../hooks/useSectionReveal', () => ({
 describe('smoke tests', () => {
   it('App renders without crashing', () => {
     render(<App />)
-    expect(screen.getByText('Guia prático')).toBeInTheDocument()
+    const h1 = screen.getByRole('heading', { level: 1 })
+    expect(h1).toHaveTextContent('Guia prático')
   })
 
   it('renders all 9 section IDs', () => {

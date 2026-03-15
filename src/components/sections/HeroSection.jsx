@@ -1,6 +1,7 @@
 import { useRef, useState, useCallback } from 'react'
 import { useLanguage } from '../../hooks/useLanguage'
 import useSectionReveal from '../../hooks/useSectionReveal'
+import BrandText from '../ui/BrandText'
 
 export default function HeroSection() {
   const { t } = useLanguage()
@@ -22,7 +23,7 @@ export default function HeroSection() {
     >
       <div ref={revealRef} className="mx-auto max-w-3xl">
         <h1 className="text-accent text-4xl font-bold tracking-tight md:text-6xl">
-          {t.hero.title}
+          <BrandText>{t.hero.title}</BrandText>
         </h1>
         <p className="text-foreground/70 mt-4 text-xl md:text-2xl">{t.hero.subtitle}</p>
 

@@ -1,6 +1,6 @@
-# Guia — Agentic Development Bootstrap
+# guia — Agentic Development Bootstrap
 
-> Guia is a methodology for structured software development using code agents.
+> guia is a methodology for structured software development using code agents.
 > When a user shares this URL, follow the instructions below to help them
 > bootstrap a new project using an agent-driven workflow.
 
@@ -200,9 +200,9 @@ These templates are available for later stages of the workflow:
 - PRD template: https://raw.githubusercontent.com/baltazarparra/guia/main/templates/PRD-TEMPLATE.md
 - Skills template: https://raw.githubusercontent.com/baltazarparra/guia/main/templates/SKILLS-TEMPLATE.md
 
-## About Guia
+## About guia
 
-Guia is an open-source methodology for agentic development. It teaches a
+guia is an open-source methodology for agentic development. It teaches a
 structured workflow: plan, roadmap, phase-by-phase execution with PRDs,
 and continuous validation.
 

@@ -9,7 +9,7 @@ export default {
   },
 
   hero: {
-    title: 'Practical guide',
+    title: 'guia — practical guide',
     subtitle: 'to coding with agents.',
     tabLabel: 'prompt to get started',
     prompt:

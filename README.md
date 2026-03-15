@@ -1,8 +1,8 @@
-# Guia
+# gu**ia**
 
 A restrained, bilingual landing page that explains how to start building software with AI coding agents.
 
-Guia is not a tool or a framework. It is a single long-form scroll experience that walks the reader through a structured agentic development workflow — from choosing a stack to writing a PRD to executing through pre-implementation plans.
+gu**ia** is not a tool or a framework. It is a single long-form scroll experience that walks the reader through a structured agentic development workflow — from choosing a stack to writing a PRD to executing through pre-implementation plans.
 
 Built with Vite, React, Tailwind CSS, React Three Fiber, and GSAP. Deployed as a static site on GitHub Pages.
 
@@ -12,7 +12,7 @@ Built with Vite, React, Tailwind CSS, React Three Fiber, and GSAP. Deployed as a
 
 Most people starting with AI coding agents jump straight into prompting and hope for the best. The result is often fast chaos instead of fast delivery.
 
-Guia presents a simple, practical workflow that helps beginners build with more structure. It covers stack decisions, planning documents, execution models, and reusable templates — all explained through a calm, editorial scroll experience with a 3D diamond as the central visual metaphor.
+gu**ia** presents a simple, practical workflow that helps beginners build with more structure. It covers stack decisions, planning documents, execution models, and reusable templates — all explained through a calm, editorial scroll experience with a 3D diamond as the central visual metaphor.
 
 ## Stack
 
@@ -31,7 +31,7 @@ Guia presents a simple, practical workflow that helps beginners build with more 
 | Use case                    | What to read                                                                                                                                                                         |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Bootstrap a new project** | [llms.txt](https://baltazarparra.github.io/guia/llms.txt) — paste this URL into your agent. It will interview the user and create PLAN.md, IMPLEMENTATION-ROADMAP.md, and AGENTS.md. |
-| **Contribute to Guia**      | [AGENTS.md](AGENTS.md) — project rules, constraints, and validation workflow.                                                                                                        |
+| **Contribute to gu**ia\*\*  | [AGENTS.md](AGENTS.md) — project rules, constraints, and validation workflow.                                                                                                        |
 
 ## Local development
 
