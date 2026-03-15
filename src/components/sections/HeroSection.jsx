@@ -18,15 +18,15 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col items-center justify-center px-6 text-center"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-4 text-center sm:px-6"
     >
-      <div ref={revealRef} className="mx-auto max-w-3xl">
-        <h1 className="text-accent text-4xl font-bold tracking-tight md:text-6xl">
+      <div ref={revealRef} className="mx-auto w-full max-w-3xl">
+        <h1 className="text-accent text-3xl font-bold tracking-tight sm:text-4xl md:text-6xl">
           {t.hero.title}
         </h1>
-        <p className="text-foreground/70 mt-4 text-xl md:text-2xl">{t.hero.subtitle}</p>
+        <p className="text-foreground/70 mt-3 text-lg sm:text-xl md:text-2xl">{t.hero.subtitle}</p>
 
-        <div className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-lg border border-white/10 bg-black/40 backdrop-blur-md">
+        <div className="mx-auto mt-8 w-full max-w-2xl overflow-hidden rounded-lg border border-white/10 bg-black/40 backdrop-blur-md sm:mt-10">
           <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
             <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
@@ -37,7 +37,7 @@ export default function HeroSection() {
             <span className="text-accent mt-px font-mono text-sm select-none" aria-hidden="true">
               &gt;
             </span>
-            <p className="min-w-0 flex-1 text-left font-mono text-sm leading-relaxed text-white/70">
+            <p className="min-w-0 flex-1 break-words text-left font-mono text-sm leading-relaxed text-white/70">
               {t.hero.prompt}
             </p>
             <button
@@ -81,7 +81,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 motion-safe:animate-bounce">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 motion-safe:animate-bounce sm:bottom-8">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
