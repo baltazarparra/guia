@@ -19,6 +19,7 @@ export default function App() {
       <PageShell>
         <LanguageToggle />
         <HeroSection />
+        <GlossarySection />
         <AgentsSection />
         <ModelsSection />
         <PlanSection />
@@ -26,7 +27,6 @@ export default function App() {
         <ExecutionSection />
         <BootstrapSection />
         <TemplatesSection />
-        <GlossarySection />
         <DipCtaSection />
         <Footer />
       </PageShell>
