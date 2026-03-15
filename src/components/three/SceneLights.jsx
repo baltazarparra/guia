@@ -6,9 +6,9 @@
 export default function SceneLights({ simplified = false }) {
   return (
     <>
-      <ambientLight intensity={simplified ? 0.4 : 0.25} />
+      <ambientLight intensity={simplified ? 0.55 : 0.25} />
       {/* Key light: above-right, white highlights on crown */}
-      <directionalLight position={[4, 5, 3]} intensity={simplified ? 1 : 1.8} />
+      <directionalLight position={[4, 5, 3]} intensity={simplified ? 1.25 : 1.8} />
       {/* Fill warm: gold rim for amber refraction */}
       <directionalLight position={[-4, 2, -3]} intensity={simplified ? 0.3 : 0.9} color="#c9a84c" />
       {/* Rim cool: lower-left, blue-silver tones on pavilion */}

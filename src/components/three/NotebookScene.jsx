@@ -30,7 +30,7 @@ export default function NotebookScene() {
               prefersReducedMotion={prefersReducedMotion}
               simplified={shouldSimplify}
             />
-            {!shouldSimplify && <Environment preset="studio" />}
+            <Environment preset="studio" />
             {!shouldSimplify && (
               <EffectComposer>
                 <Bloom

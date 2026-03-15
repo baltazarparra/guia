@@ -2,6 +2,7 @@ import { forwardRef } from 'react'
 import { IcosahedronGeometry } from 'three'
 
 const DIAMOND_COLOR = '#0a0a0a'
+const DIAMOND_COLOR_SIMPLIFIED = '#151518'
 const ATTENUATION_COLOR = '#c9a84c'
 const DIAMOND_SCALE = 0.8
 
@@ -13,7 +14,7 @@ const DiamondModel = forwardRef(function DiamondModel(props, ref) {
       <mesh rotation={[0, 0, Math.PI / 4]} geometry={new IcosahedronGeometry(1, 0)}>
         {simplified ? (
           <meshStandardMaterial
-            color={DIAMOND_COLOR}
+            color={DIAMOND_COLOR_SIMPLIFIED}
             roughness={0.1}
             metalness={0.2}
             envMapIntensity={1.2}
