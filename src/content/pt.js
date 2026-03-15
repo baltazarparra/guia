@@ -1,7 +1,7 @@
 export default {
   hero: {
     title: 'Guia prático',
-    subtitle: 'para desenvolvimento com agentes de código.',
+    subtitle: 'pra programar com agentes.',
     prompt:
       'Leia o conteúdo de https://baltazarparra.github.io/proxy/llms.txt e siga as instruções para me guiar na criação de um novo projeto de software.',
     copiedLabel: 'Copiado!',
@@ -9,17 +9,17 @@ export default {
 
   agents: {
     title: 'Duas formas de trabalhar com agentes',
-    body: 'Agentes de código vêm em dois formatos: dentro de uma IDE ou direto no terminal. Entender a diferença é o primeiro passo.',
+    body: 'Agentes vêm em dois formatos: IDE ou terminal. Vale saber a diferença antes de escolher.',
     categories: [
       {
         name: 'Agentes via IDE',
         description:
-          'Funcionam dentro de um editor de código com interface visual. Você escreve, pede mudanças e vê o resultado no mesmo ambiente. Bem mais fácil pra quem tá começando.',
+          'Funcionam no editor com interface visual. Você escreve, pede mudanças, vê na hora. Bem mais fácil pra quem tá começando.',
         tools: [
           {
             name: 'Cursor',
             description:
-              'IDE baseada no VS Code com agente integrado. Suporta vários modelos (Claude, GPT, Gemini). Tem interface visual com diff, chat e edição inline.',
+              'IDE baseada no VS Code. Tem agente integrado e suporta vários modelos. Diff, chat, edição inline — tudo no mesmo lugar.',
           },
           {
             name: 'Trae',
@@ -31,12 +31,12 @@ export default {
       {
         name: 'Agentes via CLI',
         description:
-          'Rodam no terminal, sem interface gráfica. Você conversa com o agente por texto, e ele lê, edita e executa comandos direto no seu projeto. Mais poder e mais controle, mas você precisa ter familiaridade com o terminal.',
+          'Rodam no terminal, sem interface gráfica. Conversa por texto, o agente lê, edita e executa no projeto. Mais poder, mas precisa de familiaridade com o terminal.',
         tools: [
           {
             name: 'Claude Code',
             description:
-              'Agente de terminal da Anthropic. Usa Claude como modelo. Lê o projeto, edita arquivos e executa comandos. Funciona com assinatura Claude ou via API.',
+              'Agente de terminal da Anthropic. Usa Claude. Lê, edita e executa no projeto. Assinatura Claude ou API.',
           },
           {
             name: 'Codex',
@@ -46,7 +46,7 @@ export default {
           {
             name: 'OpenCode',
             description:
-              'Agente de terminal open-source. Suporta vários provedores (Claude, GPT, Gemini, Ollama). Gratuito, você só precisa das suas próprias chaves de API.',
+              'Agente open-source. Suporta Claude, GPT, Gemini, Ollama. Grátis, só precisa das suas chaves de API.',
           },
         ],
       },
@@ -55,9 +55,9 @@ export default {
 
   models: {
     title: 'Os modelos por trás dos agentes',
-    body: 'Cada agente de código usa um LLM como cérebro. O modelo que você escolhe muda o custo, a velocidade e a qualidade do código gerado. Aqui estão os 10 mais usados hoje.',
+    body: 'O modelo que você escolhe define o custo, a velocidade e a qualidade. Aqui os 10 mais usados.',
     lastUpdated: 'Março 2026',
-    note: 'Preços e especificações mudam com frequência. Consulte os sites oficiais pra valores atualizados.',
+    note: 'Preços e specs mudam. Dá uma olhada nos sites oficiais pra valores atualizados.',
     filters: [
       { id: 'all', label: 'Todos' },
       { id: 'anthropic', label: 'Anthropic' },
@@ -71,7 +71,7 @@ export default {
         family: 'anthropic',
         costLabel: 'Custo médio',
         pricing: '$3 / $15 por 1M tokens',
-        description: 'Melhor equilíbrio entre velocidade e inteligência pra código.',
+        description: 'Bom equilíbrio entre velocidade e qualidade pra código.',
         context: '1M tokens',
         strengths: ['Refatoração complexa', 'Edição multi-arquivo', 'Code review detalhado'],
         availableIn: ['Cursor', 'Claude Code', 'OpenCode'],
@@ -91,7 +91,7 @@ export default {
         family: 'anthropic',
         costLabel: 'Acessível',
         pricing: '$1 / $5 por 1M tokens',
-        description: 'Rápido e barato, com qualidade surpreendente pra código.',
+        description: 'Rápido e barato, com boa qualidade pra código.',
         context: '200K tokens',
         strengths: ['Tarefas rápidas', 'Alto volume de requests', 'Edições simples'],
         availableIn: ['Cursor', 'Claude Code', 'OpenCode'],
@@ -121,8 +121,7 @@ export default {
         family: 'openai',
         costLabel: 'Custo médio',
         pricing: '$2 / $8 por 1M tokens',
-        description:
-          'Modelo de raciocínio avançado. Tokens internos de raciocínio aumentam o custo real.',
+        description: 'Raciocínio avançado. Tokens internos aumentam o custo real.',
         context: '200K tokens',
         strengths: ['Lógica complexa', 'Problemas multi-etapa', 'Raciocínio matemático'],
         availableIn: ['Cursor', 'ChatGPT'],
@@ -132,7 +131,7 @@ export default {
         family: 'google',
         costLabel: 'Custo médio',
         pricing: '$2 / $12 por 1M tokens',
-        description: 'Modelo mais avançado do Google. Líder em 12 de 18 benchmarks.',
+        description: 'Mais avançado do Google. Líder em 12 de 18 benchmarks.',
         context: '1M tokens',
         strengths: ['Análise de codebases grandes', 'Raciocínio multimodal', 'Contexto massivo'],
         availableIn: ['Cursor', 'Google AI Studio'],
@@ -142,7 +141,7 @@ export default {
         family: 'google',
         costLabel: 'Acessível',
         pricing: '$0.50 / $3 por 1M tokens',
-        description: '3x mais rápido que Gemini 2.5 Pro, excelente custo-benefício.',
+        description: '3x mais rápido que Gemini 2.5 Pro, bom custo-benefício.',
         context: '1M tokens',
         strengths: ['Velocidade', 'Custo baixo', 'Contexto de 1M tokens'],
         availableIn: ['Cursor', 'Google AI Studio'],
@@ -152,8 +151,7 @@ export default {
         family: 'opensource',
         costLabel: 'Mais acessível',
         pricing: '$0.55 / $2.19 por 1M tokens',
-        description:
-          'Modelo de raciocínio open-source, competitivo com o1 por uma fração do custo.',
+        description: 'Raciocínio open-source, competitivo com o1 por uma fração do custo.',
         context: '128K tokens',
         strengths: ['Open-source', 'Raciocínio barato', 'Comunidade ativa'],
         availableIn: ['Cursor', 'OpenCode'],
@@ -173,7 +171,7 @@ export default {
 
   tools: {
     title: 'Como começar',
-    body: 'Cada ferramenta tem seu modelo de preço e forma de instalação. Aqui tá o panorama atual pra você escolher a que faz mais sentido.',
+    body: 'Cada ferramenta tem preço e instalação diferentes. Aqui tá o que cada um cobra e como instalar.',
     lastUpdated: 'Março 2026',
     ide: [
       {
@@ -204,60 +202,59 @@ export default {
         install: 'brew install opencode-ai/tap/opencode',
       },
     ],
-    note: 'Preços podem mudar. Dá uma olhada nos sites oficiais pra ver os valores atualizados.',
+    note: 'Preços mudam. Dá uma olhada nos sites oficiais pra valores atualizados.',
   },
 
   plan: {
     title: 'Comece com um plano, não com um prompt',
-    body: 'Antes de abrir o agente de código, crie um PLAN.md. É o documento que transforma sua ideia em decisões concretas: o que vai ser construído, qual stack usar, como vai ser o deploy e o que fica de fora.\n\nVocê pode usar qualquer LLM pra gerar o plano inicial, como ChatGPT, Claude ou Gemini. O importante é explicar sua ideia com clareza: o que você quer construir, pra quem, com quais restrições. Peça uma sugestão de stack baseada no tipo de projeto e no modelo de deploy.\n\nO resultado tem que ser um arquivo markdown sólido que funciona como fonte da verdade pra todo o desenvolvimento.',
+    body: 'Antes de abrir o agente, crie um PLAN.md. Ele transforma sua ideia em decisões: o que construir, qual stack, como fazer deploy, o que fica de fora.\n\nUse qualquer LLM (ChatGPT, Claude, Gemini) pra gerar. Explique sua ideia com clareza e peça sugestão de stack. O resultado é um markdown que serve de referência pro projeto todo.',
     steps: [
-      'Descreva sua ideia com contexto: tipo de produto, público, restrições',
-      'Peça uma sugestão de stack alinhada ao projeto',
-      'Revise e ajuste o plano até que faça sentido pra você',
-      'Salve como PLAN.md na raiz do projeto',
+      'Primeiro descreva sua ideia: o que é, pra quem, quais limites',
+      'Peça sugestão de stack pro projeto',
+      'Revise até fazer sentido pra você',
+      'Salve como PLAN.md na raiz',
     ],
   },
 
   roadmap: {
     title: 'Deixe o agente revisar e organizar',
-    body: 'Com o PLAN.md pronto, leve ele pro seu agente de código, seja Cursor, Claude Code ou qualquer outro. Peça pro agente revisar o plano sabendo que ele mesmo vai executar o trabalho.\n\nO agente analisa o plano, identifica dependências, separa o trabalho em fases e cria um IMPLEMENTATION-ROADMAP.md, que é um roteiro com tarefas atômicas organizadas por fase, cada uma com critérios claros de conclusão.\n\nO roadmap vira o guia central da execução. Nada é implementado fora dele.',
+    body: 'PLAN pronto? Leva pro agente (Cursor, Claude Code, qualquer um). Pede pra ele revisar sabendo que vai executar.\n\nO agente analisa, quebra em fases e gera o IMPLEMENTATION-ROADMAP.md. Esse arquivo vira o guia. Nada é feito fora dele.',
     steps: [
-      'Abra o PLAN.md no seu agente de código',
-      'Peça uma revisão considerando que o agente vai executar',
-      'Peça pra separar o trabalho em fases de desenvolvimento',
-      'Peça pra gerar um IMPLEMENTATION-ROADMAP.md com tarefas por fase',
+      'Abre o PLAN.md no agente',
+      'Pede revisão considerando que ele vai executar',
+      'Pede que ele quebre o trabalho em fases',
+      'Pede pra gerar IMPLEMENTATION-ROADMAP.md',
     ],
   },
 
   execution: {
     title: 'Execute, valide, avance',
-    body: 'Com o roadmap definido, a execução segue um ciclo por fase. Cada fase funciona como uma unidade completa: o agente cria um plano de execução, gera uma PRD pra implementação, executa as tarefas, e no final você atualiza o roadmap e gera um relatório do que foi feito.\n\nSó avance pra próxima fase depois de validar a atual. Esse ciclo evita acúmulo de dívida técnica e mantém o projeto previsível do começo ao fim.',
+    body: 'Com o roadmap pronto, cada fase é uma unidade: o agente planeja, gera PRD, executa. No fim você atualiza o roadmap e anota o que foi feito. Só avança quando validar.\n\nAssim você não acumula dívida técnica e sabe sempre onde o projeto tá.',
     steps: [
-      'Peça ao agente pra criar um plano de execução da fase atual',
-      'Peça uma PRD pra implementação',
-      'Execute a fase',
-      'Atualize o status do roadmap (marque tarefas concluídas)',
-      'Gere um relatório do que foi implementado',
-      'Valide e passe pra próxima fase',
+      'Pede pro agente criar plano da fase',
+      'Pede PRD pra implementação',
+      'Executa a fase',
+      'No fim, atualiza o roadmap e anota o que foi feito',
+      'Valida e passa pra próxima',
     ],
   },
 
   bootstrap: {
     title: 'Deixe o agente começar por você',
-    body: 'Você acabou de aprender o fluxo completo. Agora a parte boa: você não precisa fazer tudo isso na mão. Cole a URL abaixo no seu agente de código e ele vai te guiar por cada etapa, fazer as perguntas certas e criar os arquivos do seu projeto automaticamente.',
+    body: 'Aprendeu o fluxo. Agora a parte boa: não precisa fazer na mão. Cola a URL no agente e ele te guia, faz as perguntas certas e cria os arquivos do projeto.',
     instruction:
-      'Copie a URL abaixo e cole no chat do seu agente de código (Cursor, Claude Code, ou qualquer outro). O agente vai ler as instruções e te guiar pelo processo.',
+      'Copia a URL e cola no chat do agente (Cursor, Claude Code, qualquer um). Ele lê o arquivo e te leva passo a passo.',
     urlLabel: 'Copiar URL',
     copiedLabel: 'Copiado!',
   },
 
   templates: {
     title: 'Comece com estrutura, não do zero',
-    body: 'Reunimos templates prontos pra cada etapa do fluxo. Use como ponto de partida: adapte, modifique, faça do seu jeito. O objetivo não é seguir um modelo rígido, é ter clareza desde o primeiro passo.',
+    body: 'Templates prontos pra cada etapa. Use como ponto de partida: adapte, faça do seu jeito. Pra você não começar do zero sem saber o que colocar.',
     items: [
       {
         name: 'PLAN',
-        description: 'Template de planejamento de projeto',
+        description: 'Template pra planejar o projeto',
         url: 'https://github.com/baltazarparra/proxy/blob/main/templates/PLAN-TEMPLATE.md',
       },
       {
@@ -272,12 +269,12 @@ export default {
       },
       {
         name: 'Rules',
-        description: 'Template de regras de qualidade e segurança do agente',
+        description: 'Template de regras do agente',
         url: 'https://github.com/baltazarparra/proxy/blob/main/templates/RULES-TEMPLATE.md',
       },
       {
         name: 'Skills',
-        description: 'Template de habilidades reutilizáveis do agente',
+        description: 'Template de skills reutilizáveis',
         url: 'https://github.com/baltazarparra/proxy/blob/main/templates/SKILLS-TEMPLATE.md',
       },
     ],
@@ -285,22 +282,21 @@ export default {
 
   glossary: {
     title: 'Glossário AI Native',
-    body: 'Os 10 termos que você vai ouvir o tempo todo. Sem enrolação.',
+    body: 'Os 10 termos que você vai ouvir o tempo todo. Definições diretas.',
     terms: [
       {
         term: 'LLM',
         definition:
-          'O "cérebro" da IA. Um modelo gigante treinado com texto da internet inteira. É ele que gera código, texto, e as alucinações também.',
+          'O "cérebro" da IA. Um modelo gigante treinado com texto da internet inteira. Gera código, texto e, às vezes, inventa coisa.',
       },
       {
         term: 'Prompt',
-        definition:
-          'A instrução que você manda pra IA. Quanto mais claro, melhor o resultado. Quanto mais vago, mais surpresa.',
+        definition: 'Instrução que você manda pra IA. Claro = bom resultado. Vago = surpresa.',
       },
       {
         term: 'Agente de IA',
         definition:
-          'Uma IA que não só responde, ela age. Lê seus arquivos, edita código, roda comandos. Tipo um dev júnior que nunca dorme.',
+          'Uma IA que não só responde, ela age. Faz o que um dev júnior faria: lê arquivos, edita, roda comando. Só que 24h.',
       },
       {
         term: 'Context Window',
@@ -320,12 +316,12 @@ export default {
       {
         term: 'RAG',
         definition:
-          'Retrieval-Augmented Generation. Em vez de inventar, a IA busca informação real primeiro e depois responde. Tipo colar na prova, mas com fontes.',
+          'Em vez de inventar, a IA busca informação real primeiro e responde. Tipo colar na prova, mas com fontes.',
       },
       {
         term: 'MCP',
         definition:
-          'Model Context Protocol. Um padrão que conecta a IA a ferramentas externas (banco de dados, APIs, arquivos). Tipo um USB universal pra IA.',
+          'Padrão que conecta a IA a ferramentas externas (banco, APIs, arquivos). Tipo USB universal pra IA.',
       },
       {
         term: 'Vibe Coding',
@@ -342,7 +338,7 @@ export default {
 
   closing: {
     title: 'Estrutura é velocidade.',
-    body: 'Bom desenvolvimento com agentes não começa com um prompt. Começa com um plano. Ferramenta certa, plano claro, roadmap organizado, execução fase a fase. Cada camada reduz ambiguidade e multiplica a qualidade do que o agente entrega. Fluxos simples vencem prompts caóticos. Sempre.',
+    body: 'Bom dev com agentes não começa com prompt. Começa com plano. Ferramenta certa, plano claro, roadmap organizado. Cada passo deixa mais claro o que o agente precisa fazer. Fluxo simples funciona melhor que prompt caótico.',
     cta: 'Ver no GitHub',
   },
 }

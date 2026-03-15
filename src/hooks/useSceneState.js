@@ -1,8 +1,8 @@
 import useScrollStore from './useScrollStore'
-import notebookStates, { SECTION_ORDER } from '../content/notebookStates'
+import diamondStates, { SECTION_ORDER } from '../content/diamondStates'
 
 /**
- * Computes the interpolated notebook pose based on current scroll state.
+ * Computes the interpolated diamond pose based on current scroll state.
  * Designed to be called inside useFrame (R3F render loop) — NOT a React hook.
  *
  * Reads activeSection and sectionProgress from Zustand via getState() (zero-cost).
@@ -16,8 +16,8 @@ export function getTargetPose() {
   const currentIndex = SECTION_ORDER.indexOf(activeSection)
   const nextIndex = Math.min(currentIndex + 1, SECTION_ORDER.length - 1)
 
-  const currentPose = notebookStates[activeSection]
-  const nextPose = notebookStates[SECTION_ORDER[nextIndex]]
+  const currentPose = diamondStates[activeSection]
+  const nextPose = diamondStates[SECTION_ORDER[nextIndex]]
   const progress = sectionProgress[activeSection]
 
   return {

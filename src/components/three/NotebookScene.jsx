@@ -26,14 +26,17 @@ export default function NotebookScene() {
             gl={{ antialias: !shouldSimplify }}
           >
             <SceneLights simplified={shouldSimplify} />
-            <SceneController prefersReducedMotion={prefersReducedMotion} />
-            {!shouldSimplify && <Environment preset="city" />}
+            <SceneController
+              prefersReducedMotion={prefersReducedMotion}
+              simplified={shouldSimplify}
+            />
+            {!shouldSimplify && <Environment preset="studio" />}
             {!shouldSimplify && (
               <EffectComposer>
                 <Bloom
-                  luminanceThreshold={0.6}
+                  luminanceThreshold={0.45}
                   luminanceSmoothing={0.9}
-                  intensity={0.4}
+                  intensity={0.5}
                   radius={0.8}
                 />
               </EffectComposer>

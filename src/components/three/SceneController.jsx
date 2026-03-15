@@ -1,23 +1,25 @@
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { MathUtils } from 'three'
-import { getTargetPose } from '../../hooks/useNotebookState'
-import NotebookModel from './NotebookModel'
+import { getTargetPose } from '../../hooks/useSceneState'
+import DiamondModel from './DiamondModel'
 
 /**
  * Reads per-section scroll state via getTargetPose() and applies smoothly
- * interpolated position + rotation to the notebook group each frame.
- * @param {{ prefersReducedMotion?: boolean }} props
+ * interpolated position + rotation to the diamond group each frame.
+ * @param {{ prefersReducedMotion?: boolean; simplified?: boolean }} props
  */
-export default function SceneController({ prefersReducedMotion = false }) {
+export default function SceneController({ prefersReducedMotion = false, simplified = false }) {
   const groupRef = useRef(null)
 
   useFrame(() => {
     if (!groupRef.current) return
 
     if (prefersReducedMotion) {
-      groupRef.current.rotation.y = 0.3
+      groupRef.current.position.set(0, 0, 0)
       groupRef.current.rotation.x = -0.1
+      groupRef.current.rotation.y = 0.3
+      groupRef.current.rotation.z = 0
       return
     }
 
@@ -31,5 +33,6 @@ export default function SceneController({ prefersReducedMotion = false }) {
     g.rotation.z = MathUtils.lerp(g.rotation.z, target.rotation[2], 0.08)
   })
 
-  return <NotebookModel ref={groupRef} />
+  // @ts-expect-error forwardRef ref inference with simplified prop
+  return <DiamondModel ref={groupRef} simplified={simplified} />
 }

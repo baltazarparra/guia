@@ -2,7 +2,7 @@
 
 ## Project overview
 
-Proxy is a static single-page landing page that explains agentic development to beginners. It is a long-form, scroll-driven editorial experience with a 3D notebook as the central visual element. Bilingual: PT-BR and EN. Deployed to GitHub Pages.
+Proxy is a static single-page landing page that explains agentic development to beginners. It is a long-form, scroll-driven editorial experience with a 3D diamond as the central visual element. Bilingual: PT-BR and EN. Deployed to GitHub Pages.
 
 Full product spec: `PLAN.md`
 Task-level execution guide: `IMPLEMENTATION-ROADMAP.md`
@@ -12,7 +12,7 @@ Task-level execution guide: `IMPLEMENTATION-ROADMAP.md`
 - Vite (static build, no SSR)
 - React (JavaScript, not TypeScript)
 - Tailwind CSS
-- React Three Fiber + Drei (3D notebook scene)
+- React Three Fiber + Drei (3D diamond scene)
 - GSAP + ScrollTrigger (scroll-driven animations)
 - Zustand (shared state bridge between GSAP and R3F)
 - GitHub Actions + GitHub Pages (deployment)
@@ -40,18 +40,18 @@ src/
                   # PlanSection, RoadmapSection, ExecutionSection,
                   # BootstrapSection, TemplatesSection, ClosingSection
     ui/           # Button, Pill, SectionHeading, CopyBlock
-    three/        # NotebookScene, NotebookModel, SceneLights, SceneController,
-                  # WebGLErrorBoundary, MobileSceneVariant
-  content/        # pt.js, en.js (bilingual copy), notebookStates.js
+    three/        # NotebookScene, DiamondModel, SceneLights, SceneController,
+                  # WebGLErrorBoundary
+  content/        # pt.js, en.js (bilingual copy), diamondStates.js
   hooks/          # useLanguage, useScrollProgress, useSectionProgress,
-                  # useReducedComplexity, useNotebookState, useScrollStore,
+                  # useReducedComplexity, useSceneState, useScrollStore,
                   # useSectionReveal
   styles/         # globals.css (Tailwind directives, CSS custom properties)
   App.jsx
   main.jsx
 public/
   llms.txt        # Machine-readable bootstrap instructions for code agents
-  models/         # (reserved — using procedural geometry for notebook)
+  models/         # (reserved — using procedural geometry for diamond)
   textures/       # texture assets if any
 .github/
   workflows/      # deploy.yml (GitHub Pages deployment)
@@ -72,11 +72,11 @@ Never let GSAP animate Three.js objects directly. Never let R3F read scroll posi
 
 ### Canvas positioning
 
-The `<Canvas>` element is positioned `fixed` at `z-index: 0`, behind all DOM content. DOM sections scroll normally on top. The notebook is always visible behind the content.
+The `<Canvas>` element is positioned `fixed` at `z-index: 0`, behind all DOM content. DOM sections scroll normally on top. The diamond is always visible behind the content.
 
 ### Progressive enhancement
 
-The 3D notebook is an enhancement, not a dependency. The page must be fully functional (all content readable, all CTAs clickable) without WebGL. The `<Canvas>` is wrapped in both `<Suspense>` and `<WebGLErrorBoundary>`.
+The 3D diamond is an enhancement, not a dependency. The page must be fully functional (all content readable, all CTAs clickable) without WebGL. The `<Canvas>` is wrapped in both `<Suspense>` and `<WebGLErrorBoundary>`.
 
 ## Visual identity
 
@@ -92,7 +92,7 @@ Dark mode with golden accents. The palette is warm and restrained:
 
 Gold accent appears on: all headings (h1, h2, h3), step number markers, card top borders, tool/template names, language toggle active state, primary button background, secondary button border, code block tint, and hero bounce arrow.
 
-3D notebook uses `#1c1916` (cover) and `#3a3225` (pages) to blend with the dark theme.
+3D diamond uses `#0a0a0a` (body) with `#c9a84c` (attenuation/refraction) to blend with the dark theme.
 
 ## Copy tone
 
@@ -136,13 +136,13 @@ Access copy via the `useLanguage` hook: `const { t, lang, setLang } = useLanguag
 - UI primitives (`Button`, `SectionHeading`, `CopyBlock`) handle typography and spacing consistently
 - 3D components live inside the `<Canvas>` context and only read state from Zustand
 
-## Notebook 3D tiers
+## 3D diamond tiers
 
 Start with Tier 1 (minimum viable). Only advance after stability is confirmed.
 
-- **Tier 1** (required): static model, rotation/position transitions via scroll, open/closed states
-- **Tier 2** (target if feasible): page-flip animation, 2-3 spread states, annotation marks
-- **Tier 3** (deferred): readable content on 3D pages, animated checklists
+- **Tier 1** (required): procedural geometry, rotation/position transitions via scroll, material with transmission/refraction
+- **Tier 2** (target if feasible): more facet detail, refined lighting, dispersion effects
+- **Tier 3** (deferred): shader customizations, advanced refraction
 
 ## Performance budget
 
@@ -157,7 +157,7 @@ Start with Tier 1 (minimum viable). Only advance after stability is confirmed.
 - Readable contrast ratios
 - Keyboard-accessible controls (language toggle, CTAs)
 - Semantic HTML for sections and headings
-- Respect `prefers-reduced-motion`: disable all scroll-driven animations (DOM and 3D), show notebook in static open state
+- Respect `prefers-reduced-motion`: disable all scroll-driven animations (DOM and 3D), show diamond in static pose
 
 ## Critical constraints
 

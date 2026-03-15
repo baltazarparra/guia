@@ -1,7 +1,7 @@
 export default {
   hero: {
     title: 'Practical guide',
-    subtitle: 'to agentic development.',
+    subtitle: 'to coding with agents.',
     prompt:
       'Read the contents of https://baltazarparra.github.io/proxy/llms.txt and follow the instructions to guide me through creating a new software project.',
     copiedLabel: 'Copied!',
@@ -9,17 +9,17 @@ export default {
 
   agents: {
     title: 'Two ways to work with agents',
-    body: 'Code agents come in two flavors: built into an IDE or running straight from the terminal. Understanding the difference is the first step.',
+    body: 'Agents come in two flavors: IDE or terminal. Worth knowing the difference before you pick.',
     categories: [
       {
         name: 'IDE Agents',
         description:
-          "They work inside a code editor with a visual interface. You write, ask for changes, and see results in the same environment. Way easier if you're just getting started.",
+          "They work in the editor with a visual interface. You write, ask for changes, see results right away. Way easier if you're just getting started.",
         tools: [
           {
             name: 'Cursor',
             description:
-              'IDE based on VS Code with an integrated agent. Supports multiple models (Claude, GPT, Gemini). Comes with a visual interface for diffs, chat, and inline editing.',
+              'IDE based on VS Code. Has integrated agent and supports several models. Diffs, chat, inline editing — all in one place.',
           },
           {
             name: 'Trae',
@@ -31,12 +31,12 @@ export default {
       {
         name: 'CLI Agents',
         description:
-          "Run in the terminal, no graphical interface. You talk to the agent through text, and it reads, edits, and runs commands directly in your project. More power and more control, but you'll need to be comfortable with the terminal.",
+          "Run in the terminal, no GUI. You talk through text, it reads, edits, runs commands. More power, but you'll need to be comfortable with the terminal.",
         tools: [
           {
             name: 'Claude Code',
             description:
-              "Anthropic's terminal agent. Uses Claude as the model. Reads your project, edits files, and runs commands. Works with a Claude subscription or via API.",
+              "Anthropic's terminal agent. Uses Claude. Reads, edits, runs commands. Claude subscription or API.",
           },
           {
             name: 'Codex',
@@ -46,7 +46,7 @@ export default {
           {
             name: 'OpenCode',
             description:
-              'Open-source terminal agent. Supports multiple providers (Claude, GPT, Gemini, Ollama). Free, you just use your own API keys.',
+              'Open-source agent. Supports Claude, GPT, Gemini, Ollama. Free, you just need your own API keys.',
           },
         ],
       },
@@ -55,9 +55,9 @@ export default {
 
   models: {
     title: 'The models behind the agents',
-    body: 'Every code agent runs on an LLM. The model you choose changes the cost, speed, and quality of the generated code. Here are the 10 most used today.',
+    body: 'The model you pick defines cost, speed, and quality. Here are the 10 most used today.',
     lastUpdated: 'March 2026',
-    note: 'Prices and specs change frequently. Check official websites for the latest numbers.',
+    note: 'Prices and specs change. Check the official sites for the latest.',
     filters: [
       { id: 'all', label: 'All' },
       { id: 'anthropic', label: 'Anthropic' },
@@ -71,7 +71,7 @@ export default {
         family: 'anthropic',
         costLabel: 'Mid-range',
         pricing: '$3 / $15 per 1M tokens',
-        description: 'Best balance of speed and intelligence for code.',
+        description: 'Good balance of speed and quality for code.',
         context: '1M tokens',
         strengths: ['Complex refactoring', 'Multi-file editing', 'Detailed code review'],
         availableIn: ['Cursor', 'Claude Code', 'OpenCode'],
@@ -91,7 +91,7 @@ export default {
         family: 'anthropic',
         costLabel: 'Affordable',
         pricing: '$1 / $5 per 1M tokens',
-        description: 'Fast and cheap, with surprisingly good coding quality.',
+        description: 'Fast and cheap, with solid coding quality.',
         context: '200K tokens',
         strengths: ['Quick tasks', 'High request volume', 'Simple edits'],
         availableIn: ['Cursor', 'Claude Code', 'OpenCode'],
@@ -121,7 +121,7 @@ export default {
         family: 'openai',
         costLabel: 'Mid-range',
         pricing: '$2 / $8 per 1M tokens',
-        description: 'Advanced reasoning model. Internal reasoning tokens increase real cost.',
+        description: 'Advanced reasoning. Internal tokens increase real cost.',
         context: '200K tokens',
         strengths: ['Complex logic', 'Multi-step problems', 'Mathematical reasoning'],
         availableIn: ['Cursor', 'ChatGPT'],
@@ -131,7 +131,7 @@ export default {
         family: 'google',
         costLabel: 'Mid-range',
         pricing: '$2 / $12 per 1M tokens',
-        description: "Google's most advanced model. Leads 12 of 18 benchmarks.",
+        description: "Google's most advanced. Leads 12 of 18 benchmarks.",
         context: '1M tokens',
         strengths: ['Large codebase analysis', 'Multimodal reasoning', 'Massive context'],
         availableIn: ['Cursor', 'Google AI Studio'],
@@ -141,7 +141,7 @@ export default {
         family: 'google',
         costLabel: 'Affordable',
         pricing: '$0.50 / $3 per 1M tokens',
-        description: '3x faster than Gemini 2.5 Pro, excellent value for the price.',
+        description: '3x faster than Gemini 2.5 Pro, good value for the price.',
         context: '1M tokens',
         strengths: ['Speed', 'Low cost', '1M token context'],
         availableIn: ['Cursor', 'Google AI Studio'],
@@ -151,7 +151,7 @@ export default {
         family: 'opensource',
         costLabel: 'Most affordable',
         pricing: '$0.55 / $2.19 per 1M tokens',
-        description: 'Open-source reasoning model, competitive with o1 at a fraction of the cost.',
+        description: 'Open-source reasoning, competitive with o1 at a fraction of the cost.',
         context: '128K tokens',
         strengths: ['Open-source', 'Cheap reasoning', 'Active community'],
         availableIn: ['Cursor', 'OpenCode'],
@@ -171,7 +171,7 @@ export default {
 
   tools: {
     title: 'How to get started',
-    body: "Each tool has its own pricing and installation method. Here's the current landscape so you can pick what makes the most sense for you.",
+    body: "Each tool has different pricing and install. Here's what each one costs and how to install.",
     lastUpdated: 'March 2026',
     ide: [
       {
@@ -202,60 +202,59 @@ export default {
         install: 'brew install opencode-ai/tap/opencode',
       },
     ],
-    note: 'Prices can change. Check the official websites for the latest numbers.',
+    note: 'Prices change. Check the official sites for the latest.',
   },
 
   plan: {
     title: 'Start with a plan, not a prompt',
-    body: "Before opening the code agent, create a PLAN.md. This is the document that turns your idea into concrete decisions: what gets built, which stack to use, how it'll be deployed, and what stays out of scope.\n\nYou can use any LLM to generate the initial plan, like ChatGPT, Claude, or Gemini. What matters is explaining your idea clearly: what you want to build, who it's for, and what the constraints are. Ask for a stack suggestion based on the project type and deployment model.\n\nThe result should be a solid markdown file that works as the source of truth for all development.",
+    body: "Before opening the agent, create a PLAN.md. It turns your idea into decisions: what to build, which stack, how to deploy, what's out of scope.\n\nUse any LLM (ChatGPT, Claude, Gemini) to generate it. Explain your idea clearly and ask for a stack suggestion. The result is a markdown file that everyone on the project can use as reference.",
     steps: [
-      'Describe your idea with context: product type, audience, constraints',
-      'Ask for a stack suggestion aligned to the project',
-      'Review and tweak the plan until it makes sense to you',
-      'Save it as PLAN.md at the project root',
+      'First describe your idea: what it is, who it is for, what the limits are',
+      'Ask for a stack suggestion for the project',
+      'Review until it makes sense to you',
+      'Save as PLAN.md at the project root',
     ],
   },
 
   roadmap: {
     title: 'Let the agent review and organize',
-    body: "With the PLAN.md ready, take it to your code agent, whether that's Cursor, Claude Code, or whatever you prefer. Ask the agent to review the plan knowing that it'll be the one doing the work.\n\nThe agent analyzes the plan, identifies dependencies, breaks the work into phases, and creates an IMPLEMENTATION-ROADMAP.md, a roadmap with atomic tasks organized by phase, each with clear completion criteria.\n\nThe roadmap becomes the central guide for execution. Nothing gets built outside of it.",
+    body: "PLAN ready? Take it to your agent (Cursor, Claude Code, whatever). Ask it to review knowing it'll be the one executing.\n\nThe agent analyzes, breaks into phases, and generates IMPLEMENTATION-ROADMAP.md. That file becomes the guide. Nothing gets built outside of it.",
     steps: [
-      'Open PLAN.md in your code agent',
-      'Ask for a review considering the agent will be the one executing it',
-      'Ask it to break the work into development phases',
-      'Ask it to generate an IMPLEMENTATION-ROADMAP.md with tasks per phase',
+      'Open PLAN.md in your agent',
+      'Ask for a review considering it will execute',
+      'Ask it to break the work into phases',
+      'Ask it to generate IMPLEMENTATION-ROADMAP.md',
     ],
   },
 
   execution: {
     title: 'Execute, validate, advance',
-    body: 'With the roadmap set, execution follows a per-phase cycle. Each phase works as a complete unit: the agent creates an execution plan, generates a PRD for the implementation, runs the tasks, and at the end you update the roadmap and generate a report of what got done.\n\nOnly move to the next phase after validating the current one. This cycle prevents technical debt from piling up and keeps the project predictable from start to finish.',
+    body: "With the roadmap set, each phase is a unit: the agent plans, generates a PRD, executes. At the end you update the roadmap and note what got done. Only advance when you've validated.\n\nThat way you don't pile up technical debt and you always know where the project stands.",
     steps: [
-      'Ask the agent to create an execution plan for the current phase',
+      'Ask the agent to create a plan for the phase',
       'Ask for a PRD for the implementation',
       'Execute the phase',
-      'Update the roadmap status (mark completed tasks)',
-      'Generate a report of what was implemented',
-      'Validate and move on to the next phase',
+      'At the end, update the roadmap and note what was done',
+      'Validate and move to the next phase',
     ],
   },
 
   bootstrap: {
     title: 'Let the agent start for you',
-    body: "You just learned the full workflow. Now the good part: you don't have to do all of this manually. Paste the URL below into your code agent and it will guide you through each step, ask the right questions, and create your project files automatically.",
+    body: "You learned the workflow. Now the good part: you don't have to do it manually. Paste the URL into your agent and it'll guide you, ask the right questions, and create your project files.",
     instruction:
-      'Copy the URL below and paste it into your code agent chat (Cursor, Claude Code, or any other). The agent will read the instructions and walk you through the process.',
+      'Copy the URL and paste it into your agent chat (Cursor, Claude Code, whatever). It reads the file and walks you through step by step.',
     urlLabel: 'Copy URL',
     copiedLabel: 'Copied!',
   },
 
   templates: {
     title: 'Start with structure, not from scratch',
-    body: "We put together ready-made templates for each stage of the flow. Use them as a starting point: adapt, modify, make them yours. The goal isn't to follow a rigid template, it's to have clarity from the very first step.",
+    body: "Ready-made templates for each stage. Use as a starting point: adapt, make them yours. So you don't start from scratch not knowing what to put in.",
     items: [
       {
         name: 'PLAN',
-        description: 'Project planning template',
+        description: 'Template to plan your project',
         url: 'https://github.com/baltazarparra/proxy/blob/main/templates/PLAN-TEMPLATE.md',
       },
       {
@@ -270,7 +269,7 @@ export default {
       },
       {
         name: 'Rules',
-        description: 'Template for agent quality and safety rules',
+        description: 'Template for agent rules',
         url: 'https://github.com/baltazarparra/proxy/blob/main/templates/RULES-TEMPLATE.md',
       },
       {
@@ -283,22 +282,21 @@ export default {
 
   glossary: {
     title: 'AI Native Glossary',
-    body: "The 10 terms you'll hear all the time. No fluff.",
+    body: "The 10 terms you'll hear all the time. Straight definitions.",
     terms: [
       {
         term: 'LLM',
         definition:
-          'The "brain" of AI. A massive model trained on the entire internet\'s text. It generates code, text, and hallucinations too.',
+          'The "brain" of AI. A massive model trained on the entire internet\'s text. Generates code, text, and sometimes makes stuff up.',
       },
       {
         term: 'Prompt',
-        definition:
-          'The instruction you send to the AI. The clearer it is, the better the output. The vaguer it is, the more surprises you get.',
+        definition: 'The instruction you send to the AI. Clear = good output. Vague = surprises.',
       },
       {
         term: 'AI Agent',
         definition:
-          "An AI that doesn't just answer, it acts. Reads your files, edits code, runs commands. Like a junior dev that never sleeps.",
+          "An AI that doesn't just answer, it acts. Does what a junior dev would: reads files, edits, runs commands. Just 24/7.",
       },
       {
         term: 'Context Window',
@@ -318,12 +316,12 @@ export default {
       {
         term: 'RAG',
         definition:
-          'Retrieval-Augmented Generation. Instead of making stuff up, the AI looks up real info first, then answers. Like cheating on a test, but with sources.',
+          'Instead of making stuff up, the AI looks up real info first, then answers. Like cheating on a test, but with sources.',
       },
       {
         term: 'MCP',
         definition:
-          'Model Context Protocol. A standard that connects AI to external tools (databases, APIs, files). Like a universal USB adapter for AI.',
+          'A standard that connects AI to external tools (databases, APIs, files). Like a universal USB adapter for AI.',
       },
       {
         term: 'Vibe Coding',
@@ -340,7 +338,7 @@ export default {
 
   closing: {
     title: 'Structure is speed.',
-    body: "Good agentic development doesn't start with a prompt. It starts with a plan. Right tool, clear plan, organized roadmap, phase-by-phase execution. Each layer cuts ambiguity and multiplies the quality of what the agent delivers. Simple flows beat chaotic prompts. Every time.",
+    body: "Good agent development doesn't start with a prompt. It starts with a plan. Right tool, clear plan, organized roadmap. Each step makes it clearer what the agent should do. Simple flow works better than chaotic prompts.",
     cta: 'View on GitHub',
   },
 }

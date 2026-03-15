@@ -12,7 +12,7 @@ Built with Vite, React, Tailwind CSS, React Three Fiber, and GSAP. Deployed as a
 
 Most people starting with AI coding agents jump straight into prompting and hope for the best. The result is often fast chaos instead of fast delivery.
 
-Proxy presents a simple, practical workflow that helps beginners build with more structure. It covers stack decisions, planning documents, execution models, and reusable templates — all explained through a calm, editorial scroll experience with a 3D notebook as the central visual metaphor.
+Proxy presents a simple, practical workflow that helps beginners build with more structure. It covers stack decisions, planning documents, execution models, and reusable templates — all explained through a calm, editorial scroll experience with a 3D diamond as the central visual metaphor.
 
 ## Stack
 
@@ -59,10 +59,10 @@ src/
     sections/     HeroSection, AgentsSection, ToolsSection, PlanSection,
                   RoadmapSection, ExecutionSection, TemplatesSection, ClosingSection
     ui/           Button, SectionHeading, CopyBlock
-    three/        NotebookScene, NotebookModel, SceneController, SceneLights,
+    three/        NotebookScene, DiamondModel, SceneController, SceneLights,
                   WebGLErrorBoundary
-  content/        Bilingual copy (pt.js, en.js), notebookStates.js
-  hooks/          Scroll progress, language, reduced complexity, notebook state
+  content/        Bilingual copy (pt.js, en.js), diamondStates.js
+  hooks/          Scroll progress, language, reduced complexity, scene state
   styles/         Global styles, Tailwind extensions
 templates/        Reusable project documentation templates (PLAN, ROADMAP, PRD, etc.)
 public/           Static assets (favicon, OG image)
@@ -73,11 +73,11 @@ public/           Static assets (favicon, OG image)
 The page is a single scroll experience with two parallel layers:
 
 - **DOM layer** — content sections scroll normally, animated with GSAP ScrollTrigger
-- **3D layer** — a fixed `<Canvas>` behind the DOM renders the notebook, driven by scroll progress via Zustand
+- **3D layer** — a fixed `<Canvas>` behind the DOM renders the diamond, driven by scroll progress via Zustand
 
 GSAP never animates Three.js objects directly. R3F never reads scroll position from the DOM. A Zustand store bridges the two systems.
 
-The 3D notebook is a progressive enhancement. The page is fully functional without WebGL.
+The 3D diamond is a progressive enhancement. The page is fully functional without WebGL.
 
 ## Languages
 

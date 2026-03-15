@@ -712,6 +712,35 @@ Before moving to Phase 7, verify:
 
 ---
 
+## Phase D — Diamond Replacement
+
+**Objective:** Replace the 3D notebook with a black diamond model. Reference: [docs/PRD-diamond-replacement.md](docs/PRD-diamond-replacement.md)
+
+**Dependencies:** Phase 6 complete.
+
+### Tasks
+
+- [x] **D.1**: Create diamondStates.js from notebookStates.js
+- [x] **D.2**: Create useSceneState.js, remove useNotebookState.js
+- [x] **D.3**: Update SceneController to use useSceneState and DiamondModel
+- [x] **D.4**: Remove NotebookModel and notebookStates
+- [x] **D.5**: Create DiamondModel (IcosahedronGeometry, meshPhysicalMaterial, attenuationColor)
+- [x] **D.6**: Integrate DiamondModel in SceneController with simplified fallback
+- [x] **D.7**: Adjust SceneLights (key light, fill warm, rim cool)
+- [x] **D.8**: Adjust Environment (warm preset) and Bloom (luminanceThreshold)
+- [x] **D.9**: Define poses in diamondStates for diamond
+- [x] **D.10**: Update AGENTS.md, README.md
+- [x] **D.11**: Validate success criteria, performance, npm run check
+
+### Phase D checkpoint
+
+- [x] Diamond visible, black, with reflections and refraction
+- [x] Scroll-driven transitions work
+- [x] prefers-reduced-motion shows static diamond
+- [x] npm run check passes
+
+---
+
 ## Phase 7 — Deployment and Launch
 
 **Objective:** Final deployment verification, social sharing setup, and documentation.

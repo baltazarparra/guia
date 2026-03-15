@@ -3,7 +3,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import useScrollStore from './useScrollStore'
 import { useLanguage } from './useLanguage'
-import { SECTION_ORDER } from '../content/notebookStates'
+import { SECTION_ORDER } from '../content/diamondStates'
 
 gsap.registerPlugin(ScrollTrigger)
 
