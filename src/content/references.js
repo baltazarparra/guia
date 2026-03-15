@@ -12,4 +12,5 @@ export default [
   { name: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Agentic_coding' },
   { name: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/Vibe_coding' },
   { name: 'Anthropic', url: 'https://www.anthropic.com/news/model-context-protocol' },
+  { name: 'O16G', url: 'https://o16g.com/manifesto/' },
 ]
