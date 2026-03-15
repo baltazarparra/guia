@@ -3,15 +3,17 @@
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-  --color-background: #0c0c0e;
-  --color-foreground: #f0ece2;
-  --color-muted: #8a8578;
-  --color-accent: #c9a84c;
-  --color-surface: #1a1a1e;
+  --color-background: #0e0d0b;
+  --color-foreground: #ede8dc;
+  --color-muted: #9a9080;
+  --color-accent: #c49664;
+  --color-surface: #17160f;
+  --color-accent-cool: #78b4d2;
+  --color-border: #2a2720;
 
-  --spacing-section: 5rem;
-  --spacing-section-lg: 8rem;
-  --spacing-content: 2rem;
+  --spacing-section: 6rem;
+  --spacing-section-lg: 10rem;
+  --spacing-content: 2.5rem;
 }
 
 html {
@@ -20,6 +22,7 @@ html {
 
 body {
   @apply bg-background text-foreground antialiased;
+  letter-spacing: 0.01em;
   overflow-x: hidden;
   overflow-wrap: break-word;
   word-break: break-word;

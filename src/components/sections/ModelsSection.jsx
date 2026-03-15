@@ -28,7 +28,7 @@ function FilterPill({ filter, isActive, onClick }) {
 function ModelCard({ model, onClick, index }) {
   return (
     <div
-      className="bg-surface border-accent/10 hover:border-accent/30 translate-y-0 cursor-pointer rounded-lg border opacity-100 transition-all duration-300 hover:shadow-[0_0_15px_rgba(201,168,76,0.05)]"
+      className="bg-surface border-accent/10 hover:border-accent/30 translate-y-0 cursor-pointer rounded-lg border opacity-100 transition-all duration-300 hover:shadow-[0_0_15px_rgba(196,150,100,0.06)]"
       style={{ transitionDelay: `${index * 50}ms` }}
       onClick={onClick}
       onKeyDown={(e) => {

@@ -14,7 +14,7 @@ export default function RoadmapSection() {
     <SectionContainer id="roadmap">
       <div
         ref={revealRef}
-        className="rounded-lg border border-white/5 bg-black/30 px-6 py-6 backdrop-blur-sm md:px-8 md:py-8"
+        className="border-foreground/5 bg-background/40 rounded-lg border px-6 py-6 backdrop-blur-sm md:px-8 md:py-8"
       >
         <SectionHeading>{t.roadmap.title}</SectionHeading>
         <CopyBlock>

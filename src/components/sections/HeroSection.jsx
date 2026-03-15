@@ -27,11 +27,11 @@ export default function HeroSection() {
         </h1>
         <p className="text-foreground/70 mt-4 text-xl md:text-2xl">{t.hero.subtitle}</p>
 
-        <div className="mx-auto mt-10 max-w-2xl rounded-lg border border-white/10 bg-black/40 backdrop-blur-md">
-          <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-            <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+        <div className="border-foreground/10 bg-background/50 mx-auto mt-10 max-w-2xl rounded-lg border backdrop-blur-md">
+          <div className="border-foreground/10 flex items-center gap-1.5 border-b px-4 py-2.5">
+            <span className="bg-foreground/20 h-2.5 w-2.5 rounded-full" />
+            <span className="bg-foreground/20 h-2.5 w-2.5 rounded-full" />
+            <span className="bg-foreground/20 h-2.5 w-2.5 rounded-full" />
             <span className="text-foreground ml-2 text-sm font-bold">{t.hero.tabLabel}</span>
           </div>
 
@@ -39,13 +39,13 @@ export default function HeroSection() {
             <span className="text-accent mt-px font-mono text-sm select-none" aria-hidden="true">
               &gt;
             </span>
-            <p className="min-w-0 flex-1 text-left font-mono text-xs leading-relaxed break-all text-white/70 sm:text-sm">
+            <p className="text-foreground/70 min-w-0 flex-1 text-left font-mono text-xs leading-relaxed break-all sm:text-sm">
               {t.hero.prompt}
             </p>
             <button
               onClick={handleCopy}
               aria-label={copied ? t.hero.copiedLabel : 'Copy'}
-              className="flex-shrink-0 rounded-md p-2 text-white/40 transition-colors hover:bg-white/10 hover:text-white/70"
+              className="text-foreground/40 hover:bg-foreground/10 hover:text-foreground/70 flex-shrink-0 rounded-md p-2 transition-colors"
             >
               {copied ? (
                 <svg

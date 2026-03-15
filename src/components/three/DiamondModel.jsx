@@ -1,9 +1,9 @@
 import { forwardRef } from 'react'
 import { IcosahedronGeometry } from 'three'
 
-const DIAMOND_COLOR = '#0a0a0a'
-const DIAMOND_COLOR_SIMPLIFIED = '#151518'
-const ATTENUATION_COLOR = '#c9a84c'
+const DIAMOND_COLOR = '#0a0a08'
+const DIAMOND_COLOR_SIMPLIFIED = '#151510'
+const ATTENUATION_COLOR = '#c49664'
 const DIAMOND_SCALE = 0.8
 
 /** @type {React.ForwardRefExoticComponent<{ simplified?: boolean }>} */
