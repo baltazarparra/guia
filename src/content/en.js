@@ -538,7 +538,7 @@ export default {
 
   dip: {
     headline: 'Need a more complete workflow for developing larger tasks?',
-    cta: 'Learn about DIP',
+    cta: 'Learn about Milestone',
   },
 
   closing: {

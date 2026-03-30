@@ -544,7 +544,7 @@ export default {
 
   dip: {
     headline: 'Precisa de um fluxo mais completo para desenvolver tarefas maiores?',
-    cta: 'Conheça o DIP',
+    cta: 'Conheça Milestone',
   },
 
   closing: {

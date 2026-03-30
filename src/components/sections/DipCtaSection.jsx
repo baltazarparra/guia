@@ -5,7 +5,7 @@ import SectionContainer from '../layout/SectionContainer'
 import SectionHeading from '../ui/SectionHeading'
 import Button from '../ui/Button'
 
-const DIP_URL = 'https://baltazarparra.github.io/DIP/'
+const DIP_URL = 'https://baltazarparra.github.io/milestone/'
 
 export default function DipCtaSection() {
   const { t } = useLanguage()
