@@ -35,7 +35,7 @@ export default {
   agents: {
     title: 'Two ways to work with agents',
     body: 'Agents come in two flavors: IDE or terminal. Worth knowing the difference before you pick.',
-    lastUpdated: 'March 2026',
+    lastUpdated: 'April 2026',
     note: 'Prices change. Check the official sites for the latest.',
     categories: [
       {
@@ -56,6 +56,14 @@ export default {
             plans: 'Hobby (free) · Pro ($20/mo) · Pro+ ($60/mo) · Ultra ($200/mo)',
             install: 'cursor.com, download the installer for your system',
             installUrl: 'https://cursor.com',
+          },
+          {
+            name: 'Google Antigravity',
+            description:
+              'Google agent-first platform. Combines IDE, terminal, and browser for agents that plan, execute, and verify tasks.',
+            plans: 'Free public preview for individuals, with generous rate limits',
+            install: 'antigravity.google/download, download it for macOS, Windows, or Linux',
+            installUrl: 'https://antigravity.google/download',
           },
           {
             name: 'Trae',
